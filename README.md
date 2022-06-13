@@ -13,12 +13,12 @@ We will use the ⌨️ Command Line Interface (CLI) (i.e. `Bash` for Windows and
 
 3. [Download, install and configure git](https://git-scm.com/). 
 
-- Windows users please install [Git for Windows](https://git-scm.com/download/win).
-- Mac users: [Git for Mac](https://git-scm.com/download/mac) or install it using Homebrew: 
+    - Windows users please install [Git for Windows](https://git-scm.com/download/win).
+    - Mac users: [Git for Mac](https://git-scm.com/download/mac) or install it using Homebrew: 
 
-  ```
-  brew install git
-  ```
+        ```
+        brew install git
+        ```
 
     
 4. Make sure to set Git with your name and email address using the following commands on the command-line with your name and email address:
