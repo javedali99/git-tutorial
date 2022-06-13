@@ -16,6 +16,8 @@ Git allows you to roll back to a previous snapshot of your project called a `com
 
 ![local git process](imgs/local-git-process.png)
 
+<br>
+
 Here is additional information on each (of these) `git` commands (note, this **_is not_** a full list -- see [documentation](https://git-scm.com/docs)):
 
 | Command  | Function |
@@ -73,6 +75,7 @@ Then, on your terminal, you could use the `git clone` command described below.  
 
 ![git with github diagram](imgs/full-git-process.png)
 
+<br>
 
 Here are additional `git` commands that allow you to interact easily with GitHub:
 
