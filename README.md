@@ -23,8 +23,8 @@ We will use the ⌨️ Command Line Interface (CLI) (i.e. `Bash` for Windows and
     
 4. Make sure to set Git with your name and email address using the following commands on the command-line with your name and email address:
 
-  ```bash
-  $ git config --global user.name "FirstName LastName"
-  $ git config --global user.email "email@example.com"
-  ```
+    ```bash
+          $ git config --global user.name "FirstName LastName"
+          $ git config --global user.email "email@example.com"
+    ```
 This is important because Git will use this information when you work on a project.
