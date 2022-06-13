@@ -59,3 +59,27 @@ The important thing to keep in mind is that GitHub doesn't just store the a copy
     git config --global user.email "email@example.com"
     ```
 This is important because Git will use this information when you work on a project.
+
+See [this article](https://help.github.com/articles/set-up-git/) for more information on setting up GitHub.
+
+### Workflow Example
+Here is _one_ example of a workflow you may choose when working with a project. Let's imagine that there's a repository online that you want to use as a starting point for a project. First, you may want **your own cloud copy** of a repository on GitHub. In order to start working on the files, you'll need to get them on your computer (they're still only in the cloud). To do so, you will clone **your repository** to your machine. This will create a local copy of the files **as well as their entire history** on your local machine. We'll use the terminal to clone the repository, but we need to get some information about it first. To get the URL location of the repository, click the **Clone or Download** button, then click on the clipboard icon to copy the URL to your clipboard:
+
+<!--
+![clone button on GitHub](imgs/clone.png)
+-->
+
+Then, on your terminal, you could use the `git clone` command described below.  Here is a diagram of the full process:
+
+![git with github diagram](imgs/full-git-process.png)
+
+
+Here are additional `git` commands that allow you to interact easily with GitHub:
+
+| Command  | Function |
+| ------------- | ------------- |
+| `git clone REPO-URL` | Creates a new copy of a source repository, which typically exists on a remote server. Use this when you want to clone down a GitHub repository. This command will create a new subdirectory with the same name as the source repository. |
+| `git push origin master`  | Pushes all commits on the `master` branch made since the last push to another repository (`origin`), typically across the network (e.g., to GitHub)  |
+| `git pull`  | Pulls all commits made since the last pull from another repository, and attempts to merge those changes into your current files. |
+| `git config` | Configure your GitHub account. You should run `git config --global user.name "Your Full Name" and `git config --global user.email your-github-email` to initially set up. |
+
