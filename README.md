@@ -1,7 +1,7 @@
 
 <p align="center"><a href="https://lab.github.com/"><img alt="Learning Lab bot" src="https://user-images.githubusercontent.com/16547949/62085817-83232580-b22a-11e9-8693-7c54205b04e5.png"></a></p>
 
-<h1 align="center">Hand-on Tutorial: Introduction to Git and GitHub </h1>
+<h1 align="center">Hands-on Tutorial: Introduction to Git and GitHub </h1>
 
 This tutorial provides an introduction to version control systems using `git` and `GitHub`. It focuses on teaching you the techniques you need to actually get started.
 
