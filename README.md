@@ -41,10 +41,10 @@ The important thing to keep in mind is that GitHub doesn't just store the a copy
 
 1. Register for an account on [github.com](https://github.com/).
 
-3. [Download, install and configure git](https://git-scm.com/). 
+3. Download, install and configure git. 
 
     - Windows users please install [Git for Windows](https://gitforwindows.org/).
-    - Mac users: [Git for Mac](https://git-scm.com/download/mac) or install it using Homebrew: 
+    - Mac users: [Git for MacOS](https://git-scm.com/download/mac) or install it using Homebrew: 
 
         ```bash
         brew install git
