@@ -106,7 +106,7 @@ This is important because Git will use this information when you work on a proje
     ssh -T git@github.com
     ```
 
-    Detailed Instructions on SSH: [GitHub Website](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) | [Software Carpentry](https://swcarpentry.github.io/git-novice/07-github/index.html#3-ssh-background-and-setup)
+    Detailed Instructions on SSH: [GitHub Docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) | [Software Carpentry](https://swcarpentry.github.io/git-novice/07-github/index.html#3-ssh-background-and-setup)
 
 
 
