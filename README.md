@@ -78,7 +78,9 @@ This is important because Git will use this information when you work on a proje
     ```bash
     ls -al ~/.ssh
     ```
-    If SSH has been set up on the computer you’re using, the public and private key pairs will be listed. The file names are either `id_ed25519`/`id_ed25519.pub` or `id_rsa`/`id_rsa.pub` depending on how the key pairs were set up. If they don’t exist on your computer, use this command to create them.
+    If SSH has been set up on the computer you’re using, the public and private key pairs will be listed. The file names are either `id_ed25519`/`id_ed25519.pub` or `id_rsa`/`id_rsa.pub` depending on how the key pairs were set up. 
+    
+    **Step 3:** If they don’t exist on your computer, use this command to create them.
     
     ```bash
     ssh-keygen -t ed25519 -C "your email address"
