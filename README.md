@@ -1,5 +1,5 @@
 
-<p align="center"><a href="https://lab.github.com/"><img alt="Learning Lab bot" src="https://user-images.githubusercontent.com/16547949/62085817-83232580-b22a-11e9-8693-7c54205b04e5.png"></a></p>
+<p align="center"><a href="https://github.com/javedali99/git-tutorial"><img alt="Learning Lab bot" src="https://user-images.githubusercontent.com/16547949/62085817-83232580-b22a-11e9-8693-7c54205b04e5.png"></a></p>
 
 <h1 align="center">Hands-on Tutorial: Introduction to Git and GitHub </h1>
 
