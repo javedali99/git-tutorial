@@ -103,12 +103,17 @@ This is important because Git will use this information when you work on a proje
     cat ~/.ssh/id_ed25519.pub
     ```
     
-    - Now, going to GitHub.com, click on your profile icon in the top right corner to get the drop-down menu. Click “Settings,” then on the settings page, click “SSH and GPG keys,” on the left side “Account settings” menu. Click the “New SSH key” button on the right side. Now, you can add the title (such as “Lab's Laptop” so you can remember where the original key pair files are located), paste your SSH key into the field, and click the “Add SSH key” to complete the setup.
+    - Now, going to GitHub.com, click on your profile icon in the top right corner to get the drop-down menu. 
+    - Click “Settings,” then on the settings page, click “SSH and GPG keys,” on the left side “Account settings” menu. 
+    - Click the “New SSH key” button on the right side. 
+    - Now, give the SSH key a title, such as your name and a way to identify the local machine. 
+    - Paste your SSH key into the field, and click the “Add SSH key” to complete the setup.
     
     **Step 6:** Now that we’ve set that up, let’s check our authentication again from the command line.
     ```bash
     ssh -T git@github.com
     ```
+    - It should say, `Hi <Your Name>! You've successfully authenticated, but GitHub does not provide shell access.`
 
     >Detailed Instructions on SSH: [GitHub instructions for SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) | [Software Carpentry](https://swcarpentry.github.io/git-novice/07-github/index.html#3-ssh-background-and-setup)
 
