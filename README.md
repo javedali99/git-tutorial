@@ -66,27 +66,30 @@ This is important because Git will use this information when you work on a proje
 
 5. **SSH Key generation and setup**
  
-    We needs to set up a way for our computer to authenticate with GitHub so it knows who's trying to connect to the remote repository. We are going to set up the method that is commonly used by many different services to authenticate access on the command line. This method is called Secure Shell Protocol (SSH). SSH is a cryptographic network protocol that allows secure communication between computers using an otherwise insecure network. SSH uses what is called a key pair. This is two keys that work together to validate access. One key is publicly known and called the public key, and the other key called the private key is kept private. 
+    You will need to configure local machine to connect to GitHub using SSH authorization. You will only need to do this once for each local machine (unless GitHub changes things in the future and decides this isn’t secure enough). SSH is a cryptographic network protocol that allows secure communication between computers using an otherwise insecure network. SSH uses what is called a key pair. This is two keys that work together to validate access. One key is publicly known and called the public key, and the other key called the private key is kept private. 
     
     **Step 1:** Check if your computer is already connected to GitHub
     ```bash
     ssh -T git@github.com
     ```
-    If it gives an error, then you're not connected.
+    - Then type your GitHub password (no characters will show up on the screen while you type your password). If it gives an error, then you're not connected.
     
     **Step 2:** Check what key pairs already exist on your computer.
     ```bash
     ls -al ~/.ssh
     ```
-    If SSH has been set up on the computer you’re using, the public and private key pairs will be listed. The file names are either `id_ed25519`/`id_ed25519.pub` or `id_rsa`/`id_rsa.pub` depending on how the key pairs were set up. 
+    - If SSH has been set up on the computer you’re using, the public and private key pairs will be listed. The file names are either `id_ed25519`/`id_ed25519.pub` or `id_rsa`/`id_rsa.pub` depending on how the key pairs were set up. 
     
     **Step 3:** If they don’t exist on your computer, use this command to create them.
     
     ```bash
     ssh-keygen -t ed25519 -C "your email address"
     ```
+    - It is recommended to use the same email you use to connect to your GitHub account. Create default file to save SSH keys: hit Enter when prompted.
+
+    - Add a password if you want, but you will need to remember this password because there might(?) be no way to change it.
     
-    The “identification” is actually the private key. You should never share it. The public key is appropriately named. The “key fingerprint” is a shorter version of a public key.
+    - The “identification” is actually the private key. You should never share it. The public key is appropriately named. The “key fingerprint” is a shorter version of a public key.
     
     **Step 4:** Now that we have generated the SSH keys, we will find the SSH files when we check.
     ```bash
@@ -94,19 +97,20 @@ This is important because Git will use this information when you work on a proje
     ```
     
     **Step 5:** Copy the public key to GitHub
-    First, we need to copy the public key. Be sure to include the .pub at the end, otherwise you’re looking at the private key.
+    - First, we need to copy the public key. Be sure to include the .pub at the end, otherwise you’re looking at the private key.
+    
     ```bash
     cat ~/.ssh/id_ed25519.pub
     ```
     
-    Now, going to GitHub.com, click on your profile icon in the top right corner to get the drop-down menu. Click “Settings,” then on the settings page, click “SSH and GPG keys,” on the left side “Account settings” menu. Click the “New SSH key” button on the right side. Now, you can add the title (such as “Lab's Laptop” so you can remember where the original key pair files are located), paste your SSH key into the field, and click the “Add SSH key” to complete the setup.
+    - Now, going to GitHub.com, click on your profile icon in the top right corner to get the drop-down menu. Click “Settings,” then on the settings page, click “SSH and GPG keys,” on the left side “Account settings” menu. Click the “New SSH key” button on the right side. Now, you can add the title (such as “Lab's Laptop” so you can remember where the original key pair files are located), paste your SSH key into the field, and click the “Add SSH key” to complete the setup.
     
     **Step 6:** Now that we’ve set that up, let’s check our authentication again from the command line.
     ```bash
     ssh -T git@github.com
     ```
 
-    Detailed Instructions on SSH: [GitHub Docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) | [Software Carpentry](https://swcarpentry.github.io/git-novice/07-github/index.html#3-ssh-background-and-setup)
+    >Detailed Instructions on SSH: [GitHub instructions for SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) | [Software Carpentry](https://swcarpentry.github.io/git-novice/07-github/index.html#3-ssh-background-and-setup)
 
 
 
