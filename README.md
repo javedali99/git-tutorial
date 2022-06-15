@@ -114,6 +114,7 @@ This is important because Git will use this information when you work on a proje
     ssh -T git@github.com
     ```
     - It should say, `Hi <Your Name>! You've successfully authenticated, but GitHub does not provide shell access.`
+    <br>
 
     >Detailed Instructions on SSH: [GitHub instructions for SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) | [Software Carpentry](https://swcarpentry.github.io/git-novice/07-github/index.html#3-ssh-background-and-setup)
 
