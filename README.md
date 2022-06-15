@@ -60,7 +60,13 @@ The important thing to keep in mind is that GitHub doesn't just store the a copy
     # Enter YOUR EMAIL to set your email. Make sure it is the email associated with your GitHub account!
     git config --global user.email "email@example.com"
     ```
-This is important because Git will use this information when you work on a project.
+    - Test if this worked by typing 
+        
+        ```bash
+        git config --list
+        ```
+        
+    - This is important because Git will use this information when you work on a project.
 
 >See [this article](https://help.github.com/articles/set-up-git/) for more information on setting up GitHub.
 
@@ -110,6 +116,7 @@ This is important because Git will use this information when you work on a proje
     - Paste your SSH key into the field, and click the “Add SSH key” to complete the setup.
     
     **Step 6:** Now that we’ve set that up, let’s check our authentication again from the command line.
+    
     ```bash
     ssh -T git@github.com
     ```
