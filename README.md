@@ -142,3 +142,7 @@ Here are additional `git` commands that allow you to interact easily with GitHub
 | `git pull`  | Pulls all commits made since the last pull from another repository, and attempts to merge those changes into your current files. |
 | `git config` | Configure your GitHub account. You should run `git config --global user.name "Your Full Name" and `git config --global user.email your-github-email` to initially set up. |
 
+## Additional resources
+How can I learn more about Markdown languages?
+    - [Here is a great Markdown tutorial](https://commonmark.org/help/tutorial/)
+    - [Here is a quick Markdown guide](https://www.markdownguide.org/basic-syntax/)
