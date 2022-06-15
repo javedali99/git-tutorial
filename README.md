@@ -105,9 +105,9 @@ The important thing to keep in mind is that GitHub doesn't just store the a copy
     **Step 5:** Copy the public key to GitHub
     - First, we need to copy the public key. Be sure to include the .pub at the end, otherwise you’re looking at the private key.
     
-    ```bash
-    cat ~/.ssh/id_ed25519.pub
-    ```
+        ```bash
+        cat ~/.ssh/id_ed25519.pub
+        ```
     
     - Now, going to GitHub.com, click on your profile icon in the top right corner to get the drop-down menu. 
     - Click “Settings,” then on the settings page, click “SSH and GPG keys,” on the left side “Account settings” menu. 
