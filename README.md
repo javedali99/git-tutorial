@@ -146,6 +146,6 @@ Here are additional `git` commands that allow you to interact easily with GitHub
 
 How can I learn more about Markdown languages?
 
-    - [Here is a great Markdown tutorial](https://commonmark.org/help/tutorial/)
+- [Here is a great Markdown tutorial](https://commonmark.org/help/tutorial/)
     
-    - [Here is a quick Markdown guide](https://www.markdownguide.org/basic-syntax/)
+- [Here is a quick Markdown guide](https://www.markdownguide.org/basic-syntax/)
