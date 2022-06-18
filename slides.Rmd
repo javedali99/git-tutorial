@@ -1,0 +1,614 @@
+---
+title: "GitHub Tutorial"
+subtitle: "Introduction to Git and GitHub"  
+author: "Javed Ali"
+role: PhD Student
+company: 'University of Central Florida'
+date: "`r format(Sys.Date(), format='%d %B %Y')`"
+output:
+  xaringan::moon_reader:
+    seal: false
+    lib_dir: libs
+    css: [xaringan-themer.css, custom.css]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+    includes:
+      in_header: assets/header.html
+      after_body: assets/afterInit.html
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(fontawesome)
+library(xaringanExtra)
+xaringanExtra::use_panelset()
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#557571",
+  secondary_color = "#d49a89",
+  header_font_google = google_font("Montserrat"),
+  text_font_google = google_font("Source Sans Pro"),
+  code_font_size = "0.8rem",
+  link_color = "#d49a89",
+)
+extra_css <- list(
+  ".accent" = list(color = "#d49a89"),
+  ".white" = list(color = "#FFFFFF"),
+  ".small" = list("font-size" = "30%"),
+  ".h4" = list("font-size" = "1.5rem",
+               "font-weight" = "600",
+               "font-family" = "Montserrat"),
+  ".title-slide-custom .remark-slide-number" = list("display" = "none"),
+  ".card" = list("position" = "relative",
+                 "display" = "inline-block",
+                 "margin" = "auto"),
+  ".card .img-top" = list("display" = "none",
+                          "position" = "absolute",
+                          "top" = "0",
+                          "left" = "0",
+                          "z-index" = "99"),
+  ".card:hover .img-top" = list("display" = "inline"),
+  ".circle" = list("border-radius" = "50%")
+)
+style_extra_css(css = extra_css, outfile = "custom.css")
+```
+
+class: title-slide-custom, title-slide, middle
+background-color: #557571
+
+<!-- <div> -->
+<!-- <img class="circle" style="position: absolute; top: 50px;right: 50px;" src="https://octodex.github.com/images/nyantocat.gif" width="150px"> -->
+<!-- </div> -->
+
+<div>
+<img class="square" style="position: absolute; top: 240px;right: 50px;" src="assets/github.png" width="250px">
+</div>
+
+# Hands-on GitHub Tutorial
+
+### Introduction to Git and GitHub
+
+<br><br>
+.h4[Javed Ali]
+
+<!-- .h4[<a href="https://github.com/javedali99/git-tutorial"><i class="fa fa-github fa-fw"></i>&nbsp; https://github.com/javedali99/git-tutorial</a>] -->
+
+[`r fontawesome::fa("github")` @javedali99](https://github.com/javedali99)
+
+[`r fontawesome::fa("twitter")` @javedali99](https://twitter.com/javedali99)
+
+[`r fontawesome::fa("link")` javedali.net](https://javedali.net)
+
+<br><br>
+.h4[`r format(Sys.Date(), format='%d %B %Y')`]
+
+<br><br>
+<br><br>
+<br><br>
+
+.right-column[
+.footnote[GitHub repository:
+<a href="https://github.com/javedali99/git-tutorial"><i class="fa fa-github fa-fw"></i>&nbsp; https://github.com/javedali99/git-tutorial</a>
+]
+]
+
+---
+# Do you dread using Git?
+
+<div>
+  <video width="100%" height="90%" controls muted>
+  <source src="assets/back-to-skool.mp4" type="video/mp4">
+  </video>
+</div>
+
+
+
+---
+
+
+
+
+# This tutorial is for you
+
+<br>
+
+.pull-left[
+.h4[If you want to get started with Git **now**.]
+
+Here, we will focus on the tools you _actually_ need to start working collaboratively and putting your work under version control.
+
+Git is extremely powerful and there are myriad sophisticated things you can do with it. As a result, the [`r fa("book", fill = "#d49a89")` documentation](https://git-scm.com/book/en/v2) is very thorough, but can often be overwhelming `r emo::ji("exploding_head")` if you are just starting.
+]
+
+.pull-right[
+<img src="https://octodex.github.com/images/Professortocat_v2.png">
+]
+
+
+
+---
+# Why you should use Git
+
+.h4[To be kind to yourself]
+
+.h4[To be kind to your collaborators]
+
+.h4[To ensure your work is reproducible]
+
+<br>
+
+--
+### Spillover benefits
+
+`r emo::ji("woman_scientist")` `r emo::ji("ruler")` It imposes a certain discipline to your programming.
+
+`r emo::ji("nerd_face")` `r emo::ji("fire")` You can be braver when you code: if your new feature breaks, you can revert back to a version that worked!
+
+
+
+---
+# Demystifying Git
+
+**Git** is the software that allows us to do version control. 
+
+**GitHub Desktop** provides a user-friendly interface to use Git.
+
+You can host **remote** repositories on https://github.com/. You edit and work on your content in your **local** repository on your computer, and then you send your changes to the remote.
+
+You can interact with Git using the **Graphical User Interface (GUI)** provided by GitHub Desktop, or through the **Command Line Interface (CLI)**. 
+
+.h4[You can accomplish the essential steps using the GUI.]
+
+.h4[Hence "5 minute Git".] 
+
+Once you start doing more complex operations, you will need the CLI.
+
+
+
+---
+background-image: url(assets/remote-local.png)
+background-size: contain
+
+
+
+---
+# Installation (GUI)
+
+Install GitHub Desktop from <https://desktop.github.com/>.
+
+<div style="width: 100%;">
+  <img src="https://repository-images.githubusercontent.com/58559694/aeae5400-6102-11e9-980d-dc74185ed41d" width="100%">
+</div>
+
+
+
+---
+# Installation (CLI)
+
+<br><br>
+
+.pull-left[
+<br>
+GitHub Desktop allows you to use Git through the Windows command prompt.
+
+But we are going to install **Git Bash** which is a more useful shell.
+
+Intall Git Bash from https://gitforwindows.org/.
+]
+
+.pull-right[
+<div class="card">
+	<img src="https://gitforwindows.org/img/gwindows_logo.png" alt="Card Back">
+    <img src="https://gitforwindows.org/img/git_logo.png" class="img-top" alt="Card Front">
+</div>
+]
+
+
+
+---
+class: inverse, middle, center
+
+# Using GitHub Desktop
+### (5 minute Git)
+
+
+
+---
+# The basic workflow 
+
+### First time
+1. **Clone** the repository that you want to work on from GitHub onto your local machine
+
+2. Work on the files/scripts, e.g., `penguins.R`
+
+3. Next, you will **commit** your changes and include an informative message, e.g. "Plot distribution of flipper length"
+
+4. Then, you will **push** your changes to the remote repository
+
+### Subsequent times
+1. **Pull** any changes from the remote repository that your collaborators might have made
+
+2. Repeat steps 2-4 above
+
+
+
+---
+# Cloning
+
+<div>
+  <video width="100%" height="90%" controls muted>
+  <source src="assets/cloning.mp4" type="video/mp4">
+  </video>
+</div>
+
+
+
+---
+# Exercise script in this repo
+
+The repo [javedali99/git-tutorial](https://github.com/javedali99/git-tutorial) contains the `penguins.R` script, which works with data from the `palmerpenguins` library.
+
+```{r echo=FALSE, fig.align="center", out.width="80%", fig.cap="Artwork by @allison_horst."}
+knitr::include_graphics("assets/meet-the-penguins.png")
+```
+
+
+
+---
+# Work on the files
+
+```{r include=FALSE, warning=FALSE}
+library(palmerpenguins)
+library(tidyverse)
+theme_set(theme_xaringan())
+```
+
+```{r warning=FALSE, fig.align="center", fig.width=7, fig.height=5}
+ggplot(penguins, 
+       aes(x = bill_length_mm, y = bill_depth_mm, color = species)) + 
+  geom_point() +
+  labs(title = "Penguin bills")
+```
+
+
+
+---
+# Staging your files
+
+![Stage your file](assets/staged-file.png)
+
+
+
+---
+# Commit your changes
+
+<div>
+  <video width="100%" height="90%" controls muted>
+  <source src="assets/committing.mp4" type="video/mp4">
+  </video>
+</div>
+
+
+
+---
+# Commit your changes
+
+.h4[Use an informative commit message]
+  - (Not great) "Analyze data" `r emo::ji("disappointed")`
+  - (Better) "Estimate logistic regression" `r emo::ji("tada")`
+
+.h4[Have a consistent style]
+  - Start with an action verb
+  - Capitalize message
+
+.h4[Commits are _cheap_, use them often!]
+
+
+
+---
+# Push your changes
+
+<div>
+  <video width="100%" height="90%" controls muted>
+  <source src="assets/pushing.mp4" type="video/mp4">
+  </video>
+</div>
+
+
+
+---
+class: inverse, middle, center
+
+# Using the command line
+### (5 minute Git)
+
+
+
+---
+# 5 minute Git
+
+.h4[Clone the repo]
+```bash
+git clone https://github.com/walice/git-tutorial.git
+```
+
+.h4[Work on `penguins.R`]
+
+.h4[Stage your files]
+```bash
+git add .
+```
+
+.h4[Commit your changes]
+```bash
+git commit -m "Add example code"
+```
+
+.h4[Push your changes]
+```bash
+git push
+```
+
+
+
+---
+class: inverse, middle, center
+
+# More command line tips
+
+
+
+---
+# Tell Git who you are
+
+.h4[As a first-time set up, you need to tell Git who you are.]
+
+```{bash, eval=FALSE}
+git config --global user.name "Your name"
+git config --global user.email "ilovepenguins@example.com"
+```
+
+
+
+---
+# git status
+
+.h4[Use this to check at what stage of the workflow you are at.]
+
+_This happens when you have modified the script, but haven't staged your changes yet._
+
+```{bash, eval=FALSE}
+git status
+```
+
+```{bash, eval=FALSE}
+{{Changes not staged for commit:}}
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+        {{modified:   penguins.R}}
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+
+
+---
+# git status
+
+_After you stage the `penguins.R` file, but before you commit the changes._
+
+```{bash, eval=FALSE}
+git add penguins.R
+git status
+```
+
+```{bash, eval=FALSE}
+{{Changes to be committed:}}
+  (use "git reset HEAD <file>..." to unstage)
+        modified:   penguins.R
+```
+
+
+.h4[When your local repository is in sync with the remote.]
+
+```{bash, eval=FALSE}
+git status
+```
+
+```{bash, eval=FALSE}
+On branch master
+Your branch is up to date with 'origin/master'.
+{{nothing to commit, working tree clean}}
+```
+
+
+
+---
+# git pull
+
+Your collaborators have been adding some awesome content to the repository, and you want to fetch their changes from the remote and update your local repository.
+
+.h4[Use this to fetch changes from the remote and to merge them in to your local repository.]
+
+```bash
+git pull
+```
+What this is doing under-the-hood is running a `git fetch` and then `git merge`.
+
+
+
+---
+# Adding and ignoring files
+
+To stage specific files in your repository, you can name them directly
+
+```bash
+git add penguins.R other-script.R
+```
+or you can add all of them at once
+
+```bash
+git add .
+```
+
+You might want to _not_ track certain files in your local repository, e.g., sensitive files such as credentials. But it might get tedious to type out each file that you _do_ want to include by name.
+
+.h4[Use a .gitignore file to specify files to always ignore.]
+
+Create a file called `.gitignore` and place it in your repo. The content of the file should include the names of the files that you want Git to **not track**.
+
+
+
+---
+# git log
+
+.h4[Use this to look at the history of your repository.]
+
+Each commit has a specific **hash** that identifies it.
+
+```bash
+git log
+```
+
+```{bash, eval=FALSE}
+{{commit af58f79bfa4301643025dd6c8767e65349cf407a}}
+Author: Name <Email address>
+Date:   DD-MM-YYYY
+    Add penguin script
+```
+
+You can also find this on GitHub, by going to [github.com/user-name/repo-name/commits](https://github.com/walice/git-tutorial/commits).
+
+.h4[You can go back in time to a specific commit, if you know its reference.]
+
+
+
+---
+# Undoing mistakes
+
+Imagine you did some work, **committed** the changes, and **pushed** them to the remote repo. But you'd like to undo those changes.
+
+.h4[Running `git revert` is a "soft undo".]
+
+Say you added some plain text by mistake to `penguins.R`. Running `git revert` will do the opposite of what you just did (i.e., remove the plain text) and create a new commit. You can then `git push` this to the remote.
+
+```{bash, eval=FALSE}
+git revert <hash-of-the-commit-you-want-to-undo>
+git push
+```
+
+
+
+---
+# Undoing mistakes
+
+`git revert` is the safest option to use.
+
+.h4[It will preserve the history of your commits.]
+
+```{bash, eval=FALSE}
+git log
+```
+
+```{bash, eval=FALSE}
+commit 6634a076212fb7bac16f9525feae1e83e0f200ca
+Author: Name <Email address>
+Date:   DD-MM-YYYY
+    {{Revert "Add plain text to code by mistake"}}
+    {{This reverts commit a8cf7c2592273ef6a28920222a92847794275868.}}
+commit a8cf7c2592273ef6a28920222a92847794275868
+Author: Name <Email address>
+Date:   DD-MM-YYYY
+    Add plain text to code by mistake
+```
+
+
+
+---
+# Rewriting history
+
+You can **change the contents of the repo** to look like it did at a _specific point in time_, by specifying the reference of the commit you want to go back to.
+
+For example, we can rewind history to before we added the plain text by mistake and had to revert it, using `git reset` to the point just before that. This will delete the history of any commits that happened after that point.
+
+.h4[This will rewrite history. This is (generally) bad.]
+
+After you `git reset`, you need to **force** your changes on the repo (this is what the `-f` flag means).
+
+```{bash, eval=FALSE}
+git reset --hard <hash-of-the-commit-you-want-to-go-back-to>
+git push -f
+```
+
+---
+class: inverse, middle, center
+
+# Other resources
+
+
+
+---
+# Other Git resources
+
+### http://swcarpentry.github.io/git-novice/
+### https://github.github.com/training-kit/downloads/github-git-cheat-sheet/
+### https://learngitbranching.js.org/
+<!-- ### https://happygitwithr.com/ -->
+<!-- ### https://ndpsoftware.com/git-cheatsheet.html -->
+
+
+
+---
+class: middle, center
+background-color: #557571
+
+## .white[Links]
+
+.h4[`r fa("book-open", fill = "#d49a89")`<a href="https://github.com/javedali99//git-tutorial/slides.html">.accent[&nbsp; Slides]</a>]<br>
+.h4[.accent[<i class="fa fa-github fa-fw"></i>]<a href="https://github.com/javedali99/git-tutorial">.accent[&nbsp; javedali99/git-tutorial]</a>]<br>
+.h4[.accent[<i class="fa fa-envelope"></i>]<a href="mailto:javedali@knights.ucf.edu">.accent[&nbsp;&nbsp;javedali@knights.ucf.edu]</a>]
+
+<br>
+
+
+
+---
+name: goodbye
+class: pink, middle, center
+
+
+<img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/15319503?v=4" width="200px"/>
+
+# Thank you!
+
+#### Find me at...
+
+[`r fontawesome::fa("github")` @javedali99](https://github.com/javedali99)    
+[`r fontawesome::fa("twitter")` @javedali99](https://twitter.com/javedali99)   
+[`r fontawesome::fa("link")` javedali.net](https://javedali.net)
+
+
+
+ ```{r include=FALSE}
+ library(metathis)
+ meta() %>%
+   meta_description(
+     "Use YAML, strings, and glue to power your R Markdown documents."
+   ) %>%
+   meta_name("github-repo" = "javedali99/talks") %>%
+   meta_viewport() %>%
+   meta_social(
+     title = "Made with YAML, strings, and glue: An R Markdown valentine for you",
+     url = "https://alison.netlify.app/rmd-valentine",
+     image = "https://www.javedali.net/author/avatar_hufffe226e957f1b2290d587dc7c95d8a4_871284_270x270_fill_lanczos_center_2.PNG",
+     image_alt = "Vintage valentine",
+     og_type = "website",
+     og_author = "Javed Ali",
+     twitter_card_type = "summary",
+     twitter_creator = "@javedali99"
+   )
+```
