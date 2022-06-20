@@ -568,7 +568,7 @@ background-color: #557571
 
 ## .white[Links]
 
-.h4[`r fa("book-open", fill = "#d49a89")`<a href="https://github.com/javedali99//git-tutorial/slides.html">.accent[&nbsp; Slides]</a>]<br>
+.h4[`r fa("book-open", fill = "#d49a89")`<a href="https://github.com/javedali99/git-tutorial/slides.html">.accent[&nbsp; Slides]</a>]<br>
 .h4[.accent[<i class="fa fa-github fa-fw"></i>]<a href="https://github.com/javedali99/git-tutorial">.accent[&nbsp; javedali99/git-tutorial]</a>]<br>
 .h4[.accent[<i class="fa fa-envelope"></i>]<a href="mailto:javedali@knights.ucf.edu">.accent[&nbsp;&nbsp;javedali@knights.ucf.edu]</a>]
 
