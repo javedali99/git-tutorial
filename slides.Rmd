@@ -73,27 +73,30 @@ background-color: #557571
 
 ### Introduction to Git and GitHub
 
-<br><br>
+<br><br><br><br><br>
 .h4[Javed Ali]
 
 <!-- .h4[<a href="https://github.com/javedali99/git-tutorial"><i class="fa fa-github fa-fw"></i>&nbsp; https://github.com/javedali99/git-tutorial</a>] -->
 
-[`r fontawesome::fa("github")` @javedali99](https://github.com/javedali99)
+<!-- [`r fontawesome::fa("github")` @javedali99](https://github.com/javedali99) -->
+Graduate Research Assistant & PhD Student
 
-[`r fontawesome::fa("twitter")` @javedali99](https://twitter.com/javedali99)
+<!-- [`r fontawesome::fa("twitter")` @javedali99](https://twitter.com/javedali99) -->
+Dept. of Civil, Environmental & Construction Engineering
 
-[`r fontawesome::fa("link")` javedali.net](https://javedali.net)
+<!-- [`r fontawesome::fa("link")` javedali.net](https://javedali.net) -->
+University of Central Florida, USA
+
+<br><br><br>
+.h5[(`r format(Sys.Date(), format='%d %B %Y')`)]
 
 <br><br>
-.h4[`r format(Sys.Date(), format='%d %B %Y')`]
-
-<br><br>
 <br><br>
 <br><br>
 
-.right-column[
-.footnote[GitHub repository:
-<a href="https://github.com/javedali99/git-tutorial"><i class="fa fa-github fa-fw"></i>&nbsp; https://github.com/javedali99/git-tutorial</a>
+.pull-right[
+.footnote[Slides:
+<a href="https://tinyurl.com/intro-git-slides"><i class="fa fa-github fa-fw"></i>&nbsp; https://tinyurl.com/intro-git-slides</a>
 ]
 ]
 
@@ -568,8 +571,10 @@ background-color: #557571
 
 ## .white[Links]
 
-.h4[`r fa("book-open", fill = "#d49a89")`<a href="https://github.com/javedali99/git-tutorial/slides.html">.accent[&nbsp; Slides]</a>]<br>
+.h4[`r fa("book-open", fill = "#d49a89")`<a href="https://javedali99.github.io/git-tutorial/slides.html">.accent[&nbsp; Slides]</a>]<br>
+
 .h4[.accent[<i class="fa fa-github fa-fw"></i>]<a href="https://github.com/javedali99/git-tutorial">.accent[&nbsp; javedali99/git-tutorial]</a>]<br>
+
 .h4[.accent[<i class="fa fa-envelope"></i>]<a href="mailto:javedali@knights.ucf.edu">.accent[&nbsp;&nbsp;javedali@knights.ucf.edu]</a>]
 
 <br>
