@@ -4,7 +4,7 @@
 <h1 align="center">Hands-on Tutorial: Introduction to Git and GitHub </h1>
 
 
-<h1 align="left"> 📖 Slides<img src="https://user-images.githubusercontent.com/15319503/174641539-d6e4c1a2-be66-47d6-a8d1-6d21dd359871.png" width="10%" height="10%" /></h1>
+<h2 align='center'> 📖 [Slides](https://javedali99.github.io/git-tutorial/slides.html#1)</h2>
 
 
 This tutorial provides an introduction to version control systems using `git` and `GitHub`. It focuses on teaching you the techniques you need to actually get started.
