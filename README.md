@@ -3,9 +3,10 @@
 
 <h1 align="center">Hands-on Tutorial: Introduction to Git and GitHub </h1>
 
-
-<h2 align='center'> 📖 [Slides](https://javedali99.github.io/git-tutorial/slides.html#1)</h2>
-
+<h2 align="center">
+    <a href="https://javedali99.github.io/git-tutorial/slides.html">📖 Slides</a>
+    <br>
+</h2>
 
 This tutorial provides an introduction to version control systems using `git` and `GitHub`. It focuses on teaching you the techniques you need to actually get started.
 
