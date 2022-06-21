@@ -82,7 +82,7 @@ background-color: #557571
 Graduate Research Assistant & PhD Student
 
 <!-- [`r fontawesome::fa("twitter")` @javedali99](https://twitter.com/javedali99) -->
-Dept. of Civil, Environmental & Construction Engineering
+[Dept. of Civil, Environmental & Construction Engineering
 
 <!-- [`r fontawesome::fa("link")` javedali.net](https://javedali.net) -->
 University of Central Florida, USA
