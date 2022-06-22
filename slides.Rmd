@@ -82,7 +82,7 @@ background-color: #557571
 Graduate Research Assistant & PhD Student
 
 <!-- [`r fontawesome::fa("twitter")` @javedali99](https://twitter.com/javedali99) -->
-[Dept. of Civil, Environmental & Construction Engineering
+Dept. of Civil, Environmental & Construction Engineering
 
 <!-- [`r fontawesome::fa("link")` javedali.net](https://javedali.net) -->
 University of Central Florida, USA
@@ -101,19 +101,14 @@ University of Central Florida, USA
 ]
 
 ---
-# Do you dread using Git?
+# Has this happened to you?
 
-<div>
-  <video width="100%" height="90%" controls muted>
-  <source src="assets/back-to-skool.mp4" type="video/mp4">
-  </video>
-</div>
-
+```{r echo=FALSE, fig.align="center", out.width="50%", fig.cap=""}
+knitr::include_graphics("imgs/final.png")
+```
 
 
 ---
-
-
 
 
 # This tutorial is for you
@@ -135,7 +130,7 @@ Git is extremely powerful and there are myriad sophisticated things you can do w
 
 
 ---
-# Why you should use Git
+# Why you should use Git 
 
 .h4[To be kind to yourself]
 
@@ -145,32 +140,38 @@ Git is extremely powerful and there are myriad sophisticated things you can do w
 
 <br>
 
+
 --
 ### Spillover benefits
 
-`r emo::ji("woman_scientist")` `r emo::ji("ruler")` It imposes a certain discipline to your programming.
+`r emo::ji("man_scientist")` `r emo::ji("ruler")` It imposes a certain discipline to your programming.
 
 `r emo::ji("nerd_face")` `r emo::ji("fire")` You can be braver when you code: if your new feature breaks, you can revert back to a version that worked!
 
+`r emo::ji("coder")` `r emo::ji("box")` Keeps multiple (older and newer) versions of everything (not just source code)
 
 
 ---
-# Demystifying Git
+# Git and GitHub
 
-**Git** is the software that allows us to do version control. 
+.h4[Git]
 
-**GitHub Desktop** provides a user-friendly interface to use Git.
+- the software that allows us to do version control. 
 
-You can host **remote** repositories on https://github.com/. You edit and work on your content in your **local** repository on your computer, and then you send your changes to the remote.
+- like the “Track Changes” feature from Microsoft Word, but more rigorous, powerful, and scaled up to multiple files.
+
+
+.h4[GitHub] 
+
+- hosting service for git projects — essentially Dropbox for git projects.
+
+- You can host **remote** repositories on https://github.com/. You edit and work on your content in your **local** repository on your computer, and then you send your changes to the remote.
+
 
 You can interact with Git using the **Graphical User Interface (GUI)** provided by GitHub Desktop, or through the **Command Line Interface (CLI)**. 
 
-.h4[You can accomplish the essential steps using the GUI.]
 
-.h4[Hence "5 minute Git".] 
-
-Once you start doing more complex operations, you will need the CLI.
-
+.h4[In this tutorial, we will use the CLI.]
 
 
 ---
@@ -178,31 +179,28 @@ background-image: url(assets/remote-local.png)
 background-size: contain
 
 
-
 ---
-# Installation (GUI)
-
-Install GitHub Desktop from <https://desktop.github.com/>.
-
-<div style="width: 100%;">
-  <img src="https://repository-images.githubusercontent.com/58559694/aeae5400-6102-11e9-980d-dc74185ed41d" width="100%">
-</div>
-
-
-
----
-# Installation (CLI)
-
-<br><br>
+# Download and Installation
 
 .pull-left[
 <br>
-GitHub Desktop allows you to use Git through the Windows command prompt.
 
-But we are going to install **Git Bash** which is a more useful shell.
+.h4[Windows]
 
-Intall Git Bash from https://gitforwindows.org/.
+
+Intall `Git Bash` from https://gitforwindows.org/.
+
+<br>
+
+.h4[MacOS]
+	 
+https://tinyurl.com/git-mac 
+
+(Alternate: `brew install git`)
+
 ]
+
+<br>
 
 .pull-right[
 <div class="card">
@@ -211,136 +209,126 @@ Intall Git Bash from https://gitforwindows.org/.
 </div>
 ]
 
+---
+# Setting up git environment 
+
+<br>
+
+.h4[As a first-time set up, you need to tell Git who you are.]
+
+Enter these lines (with appropriate changes):
+
+```{bash, eval=FALSE}
+git config --global user.name "Javed Ali"
+git config --global user.email "javedali@knights.ucf.edu"
+```
+
+- Make sure that you include here the same email you used for signing up on GitHub.
+
+Test if this worked by typing
+```{bash, eval=FALSE}
+git config --list
+```
+
+.h4[You only need to do this once.]
+
+---
+# SSH key generation & setup
+
+--
+**Step 1.** Check if your computer is already connected to GitHub
+
+```{bash, eval=FALSE}
+ssh -T git@github.com
+```
+- If it gives an error, then you're not connected.
+
+<br>
+
+--
+
+**Step 2.** Check what key pairs already exist on your computer.
+```{bash, eval=FALSE}
+ls -al ~/.ssh
+```
+- If SSH has been set up on the computer you’re using, the public and private key pairs will be listed. The file names are either `id_ed25519`/`id_ed25519.pub` or `id_rsa`/`id_rsa.pub` depending on how the key pairs were set up.
+
+--
+
+**Step 3.** If they don’t exist on your computer, use this command to create them.
+```{bash, eval=FALSE}
+ssh-keygen -t ed25519 -C "your email address"
+```
+
+---
+<br><br><br>
+
+**Step 4.** Now that we have generated the SSH keys, we will find the SSH files when we check.
+```{bash, eval=FALSE}
+ls -al ~/.ssh
+```
+<br>
+--
+
+**Step 5.** Copy the public key to GitHub
+```{bash, eval=FALSE}
+cat ~/.ssh/id_ed25519.pub
+```
+<br>
+--
+
+**Step 6.**  Now that we’ve set that up, let’s check our authentication again from the command line.
+```{bash, eval=FALSE}
+ssh -T git@github.com
+```
+
+It should say, 
+```{bash eval=FALSE}
+Hi <Your Name>! You have successfully authenticated, but GitHub does not provide shell access.
+```
+---
+
+# Working with GitHub
+
+<br>
+
+There are two ways to work with GitHub projects.
+
+
+**Type 1:** 
+
+- Create the repository, clone it to your PC, and work on it.**(Recommended)**
+
+<br>
+
+**Type 2:** 
+
+- Work on your project locally then create the repository on GitHub and push it to remote.
+
 
 
 ---
-class: inverse, middle, center
-
-# Using GitHub Desktop
-### (5 minute Git)
-
-
-
----
-# The basic workflow 
-
-### First time
-1. **Clone** the repository that you want to work on from GitHub onto your local machine
-
-2. Work on the files/scripts, e.g., `penguins.R`
-
-3. Next, you will **commit** your changes and include an informative message, e.g. "Plot distribution of flipper length"
-
-4. Then, you will **push** your changes to the remote repository
-
-### Subsequent times
-1. **Pull** any changes from the remote repository that your collaborators might have made
-
-2. Repeat steps 2-4 above
-
-
-
----
-# Cloning
+# Create a repo on GitHub
 
 <div>
   <video width="100%" height="90%" controls muted>
-  <source src="assets/cloning.mp4" type="video/mp4">
+  <source src="assets/create-repo.mp4" type="video/mp4">
   </video>
 </div>
 
-
-
 ---
-# Exercise script in this repo
 
-The repo [javedali99/git-tutorial](https://github.com/javedali99/git-tutorial) contains the `penguins.R` script, which works with data from the `palmerpenguins` library.
+# Working on local machine
 
-```{r echo=FALSE, fig.align="center", out.width="80%", fig.cap="Artwork by @allison_horst."}
-knitr::include_graphics("assets/meet-the-penguins.png")
-```
+.h4[Clone the repository]
 
-
-
----
-# Work on the files
-
-```{r include=FALSE, warning=FALSE}
-library(palmerpenguins)
-library(tidyverse)
-theme_set(theme_xaringan())
-```
-
-```{r warning=FALSE, fig.align="center", fig.width=7, fig.height=5}
-ggplot(penguins, 
-       aes(x = bill_length_mm, y = bill_depth_mm, color = species)) + 
-  geom_point() +
-  labs(title = "Penguin bills")
-```
-
-
-
----
-# Staging your files
-
-![Stage your file](assets/staged-file.png)
-
-
-
----
-# Commit your changes
-
-<div>
-  <video width="100%" height="90%" controls muted>
-  <source src="assets/committing.mp4" type="video/mp4">
-  </video>
-</div>
-
-
-
----
-# Commit your changes
-
-.h4[Use an informative commit message]
-  - (Not great) "Analyze data" `r emo::ji("disappointed")`
-  - (Better) "Estimate logistic regression" `r emo::ji("tada")`
-
-.h4[Have a consistent style]
-  - Start with an action verb
-  - Capitalize message
-
-.h4[Commits are _cheap_, use them often!]
-
-
-
----
-# Push your changes
-
-<div>
-  <video width="100%" height="90%" controls muted>
-  <source src="assets/pushing.mp4" type="video/mp4">
-  </video>
-</div>
-
-
-
----
-class: inverse, middle, center
-
-# Using the command line
-### (5 minute Git)
-
-
-
----
-# 5 minute Git
-
-.h4[Clone the repo]
 ```bash
-git clone https://github.com/walice/git-tutorial.git
+git clone URL
 ```
 
-.h4[Work on `penguins.R`]
+```bash
+git clone https://github.com/javedali99/git-tutorial.git
+```
 
 .h4[Stage your files]
 ```bash
@@ -357,26 +345,45 @@ git commit -m "Add example code"
 git push
 ```
 
+---
+# Adding your files to git repository
+
+```{r echo=FALSE, fig.align="center", out.width="100%", fig.cap=""}
+knitr::include_graphics("imgs/github-workflow.png")
+```
+
+---
+# Commit messages
+
+.pull-left[
+<br>
+In git, “Commits are cheap.” Do them often.
+
+When you commit, you must provide a one-line message stating what you have done.
+
+- **Terrible message:** “Fixed a bunch of things”
+
+- **Better message:** “Corrected the calculation of median scores”
+
+Commit messages can be very helpful, to yourself as well as to your team members.
+
+You can’t say much in one line, so commit often.
+
+
+]
+
+<br>
+
+.pull-right[
+![vcs](imgs/vcs.png)
+]
+
 
 
 ---
 class: inverse, middle, center
 
 # More command line tips
-
-
-
----
-# Tell Git who you are
-
-.h4[As a first-time set up, you need to tell Git who you are.]
-
-```{bash, eval=FALSE}
-git config --global user.name "Your name"
-git config --global user.email "ilovepenguins@example.com"
-```
-
-
 
 ---
 # git status
@@ -402,17 +409,17 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ---
 # git status
 
-_After you stage the `penguins.R` file, but before you commit the changes._
+_After you stage the `file.py` file, but before you commit the changes._
 
 ```{bash, eval=FALSE}
-git add penguins.R
+git add file.py
 git status
 ```
 
 ```{bash, eval=FALSE}
 {{Changes to be committed:}}
   (use "git reset HEAD <file>..." to unstage)
-        modified:   penguins.R
+        modified:   file.py
 ```
 
 
@@ -424,7 +431,7 @@ git status
 
 ```{bash, eval=FALSE}
 On branch master
-Your branch is up to date with 'origin/master'.
+Your branch is up to date with 'origin/main'.
 {{nothing to commit, working tree clean}}
 ```
 
@@ -450,7 +457,7 @@ What this is doing under-the-hood is running a `git fetch` and then `git merge`.
 To stage specific files in your repository, you can name them directly
 
 ```bash
-git add penguins.R other-script.R
+git add file.py other-script.py
 ```
 or you can add all of them at once
 
@@ -481,10 +488,10 @@ git log
 {{commit af58f79bfa4301643025dd6c8767e65349cf407a}}
 Author: Name <Email address>
 Date:   DD-MM-YYYY
-    Add penguin script
+    Add file script
 ```
 
-You can also find this on GitHub, by going to [github.com/user-name/repo-name/commits](https://github.com/walice/git-tutorial/commits).
+You can also find this on GitHub, by going to [github.com/user-name/repo-name/commits](https://github.com/javedali99/git-tutorial/commits).
 
 .h4[You can go back in time to a specific commit, if you know its reference.]
 
@@ -527,24 +534,6 @@ commit a8cf7c2592273ef6a28920222a92847794275868
 Author: Name <Email address>
 Date:   DD-MM-YYYY
     Add plain text to code by mistake
-```
-
-
-
----
-# Rewriting history
-
-You can **change the contents of the repo** to look like it did at a _specific point in time_, by specifying the reference of the commit you want to go back to.
-
-For example, we can rewind history to before we added the plain text by mistake and had to revert it, using `git reset` to the point just before that. This will delete the history of any commits that happened after that point.
-
-.h4[This will rewrite history. This is (generally) bad.]
-
-After you `git reset`, you need to **force** your changes on the repo (this is what the `-f` flag means).
-
-```{bash, eval=FALSE}
-git reset --hard <hash-of-the-commit-you-want-to-go-back-to>
-git push -f
 ```
 
 ---
@@ -616,4 +605,5 @@ class: pink, middle, center
      twitter_card_type = "summary",
      twitter_creator = "@javedali99"
    )
+   
 ```
