@@ -297,15 +297,13 @@ There are two ways to work with GitHub projects.
 
 **Type 1:** 
 
-- Create the repository, clone it to your PC, and work on it.**(Recommended)**
+- Create the repository, clone it to your PC, and work on it. **(Recommended)**
 
 <br>
 
 **Type 2:** 
 
 - Work on your project locally then create the repository on GitHub and push it to remote.
-
-
 
 ---
 # Create a repo on GitHub
@@ -315,6 +313,23 @@ There are two ways to work with GitHub projects.
   <source src="assets/create-repo.mp4" type="video/mp4">
   </video>
 </div>
+
+---
+# The basic workflow 
+
+### First time
+1. **Clone** the repository that you want to work on from GitHub onto your local machine
+
+2. Work on the files/scripts
+
+3. Next, you will **commit** your changes and include an informative message, e.g. "Plot distribution of precipitation"
+
+4. Then, you will **push** your changes to the remote repository
+
+### Subsequent times
+1. **Pull** any changes from the remote repository that your collaborators might have made
+
+2. Repeat steps 2-4 above
 
 ---
 
