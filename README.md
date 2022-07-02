@@ -1,4 +1,3 @@
-
 <p align="center"><a href="https://github.com/javedali99/git-tutorial"><img alt="Learning Lab bot" src="https://user-images.githubusercontent.com/16547949/62085817-83232580-b22a-11e9-8693-7c54205b04e5.png"></a></p>
 
 <h1 align="center">Hands-on Tutorial: Introduction to Git and GitHub </h1>
@@ -13,6 +12,7 @@ This tutorial provides an introduction to version control systems using `git` an
 We will use the ⌨️ Command Line Interface (CLI) (i.e. `Bash` for Windows and `Terminal` in Mac) to perform essential command line techniques. 
 
 ## Git
+
 `Git` is a free and open-source version control software that provides you with a set of command line tools for tracking changes to your files. 
 
 All of the files in a project directory (referred to as a `repository`, or `repo`) are tracked by a hidden `.git` file in the root of the project.  You can initiate a repository on your local machine with the `git init` command.  
@@ -25,114 +25,127 @@ Git allows you to roll back to a previous snapshot of your project called a `com
 
 Here is additional information on each (of these) `git` commands (note, this **_is not_** a full list -- see [documentation](https://git-scm.com/docs)):
 
-| Command  | Function |
-| ------------- | ------------- |
-| `git init` | Initialize a new repository in the current directory. This creates a database to track file changes, which you **only do once** at the start of a project. |
-| `git status`  | Reports any changes to the files in your repo. |
-| `git add FILE-NAME` or `git add .`  | Adds a file or files (`.`) to the staging area. All changes to those files will be included in the next commit. |
-| `git commit -m "Description"`  | Commits all changes to all files currently in the **staging area** to the repository. This takes a snapshot that you can return to and **must include a message** with `-m`.|
+| Command                            | Function                                                                                                                                                                     |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `git init`                         | Initialize a new repository in the current directory. This creates a database to track file changes, which you **only do once** at the start of a project.                   |
+| `git status`                       | Reports any changes to the files in your repo.                                                                                                                               |
+| `git add FILE-NAME` or `git add .` | Adds a file or files (`.`) to the staging area. All changes to those files will be included in the next commit.                                                              |
+| `git commit -m "Description"`      | Commits all changes to all files currently in the **staging area** to the repository. This takes a snapshot that you can return to and **must include a message** with `-m`. |
 
 So far, the process described all occurs on your local machine. This is a good practice, but does not facilitate collaboration with others, or create a backup of your code. For these purposes, we'll use **GitHub**.
 
 ## GitHub
+
 In order to share our code and collaborate with others, we'll need a publicly accessible (cloud) location where we can store our files (and file _history_) -- that's what GitHub is for.
 
 GitHub is the most popular open-source web-based repository hosting service.  In addition to providing a great UI on top of a server that hosts your repositories, GitHub has a number of additional features such as issue tracking, wiki pages, and notifications that make it a great collaboration tool.  
 
 The important thing to keep in mind is that GitHub doesn't just store the a copy of your code files in your repository -- it stores the **entire database of changes** to the files. This allows other developers to view the files at an earlier point in time.  
 
-
 ## To Get Started
 
 1. Register for an account on [github.com](https://github.com/).
 
-3. Download, install and configure git. 
+2. Download, install and configure git. 
+   
+   - Windows users please install [Git for Windows](https://gitforwindows.org/).
+   
+   - Mac users: [Git for MacOS](https://git-scm.com/download/mac) or install it using Homebrew: 
+     
+     ```bash
+     brew install git
+     ```
 
-    - Windows users please install [Git for Windows](https://gitforwindows.org/).
-    - Mac users: [Git for MacOS](https://git-scm.com/download/mac) or install it using Homebrew: 
-
-        ```bash
-        brew install git
-        ```
-
-    
 4. Make sure to set Git with your name and email address using the following commands on the command-line with your name and email address:
+   
+   ```bash
+   # Enter YOUR NAME to set your name
+   git config --global user.name "FirstName LastName"
+   
+   # Enter YOUR EMAIL to set your email. Make sure it is the email associated with your GitHub account!
+   git config --global user.email "email@example.com"
+   ```
+   
+   - Test if this worked by typing 
+     
+     ```bash
+     git config --list
+     ```
+   
+   - This is important because Git will use this information when you work on a project.
 
-    ```bash
-    # Enter YOUR NAME to set your name
-    git config --global user.name "FirstName LastName"
-          
-    # Enter YOUR EMAIL to set your email. Make sure it is the email associated with your GitHub account!
-    git config --global user.email "email@example.com"
-    ```
-    - Test if this worked by typing 
-        
-        ```bash
-        git config --list
-        ```
-        
-    - This is important because Git will use this information when you work on a project.
-
->See [this article](https://help.github.com/articles/set-up-git/) for more information on setting up GitHub.
+> See [this article](https://help.github.com/articles/set-up-git/) for more information on setting up GitHub.
 
 5. **SSH Key generation and setup**
- 
+   
     You will need to configure local machine to connect to GitHub using SSH authorization. You will only need to do this once for each local machine (unless GitHub changes things in the future and decides this isn’t secure enough). SSH is a cryptographic network protocol that allows secure communication between computers using an otherwise insecure network. SSH uses what is called a key pair. This is two keys that work together to validate access. One key is publicly known and called the public key, and the other key called the private key is kept private. 
-    
+   
     **Step 1:** Check if your computer is already connected to GitHub
-    ```bash
-    ssh -T git@github.com
-    ```
-    - Then type your GitHub password (no characters will show up on the screen while you type your password). If it gives an error, then you're not connected.
-    
-    **Step 2:** Check what key pairs already exist on your computer.
-    ```bash
-    ls -al ~/.ssh
-    ```
-    - If SSH has been set up on the computer you’re using, the public and private key pairs will be listed. The file names are either `id_ed25519`/`id_ed25519.pub` or `id_rsa`/`id_rsa.pub` depending on how the key pairs were set up. 
-    
-    **Step 3:** If they don’t exist on your computer, use this command to create them.
-    
-    ```bash
-    ssh-keygen -t ed25519 -C "your email address"
-    ```
-    - It is recommended to use the same email you use to connect to your GitHub account. Create default file to save SSH keys: hit Enter when prompted.
-
-    - Add a password if you want, but you will need to remember this password because there might(?) be no way to change it.
-    
-    - The “identification” is actually the private key. You should never share it. The public key is appropriately named. The “key fingerprint” is a shorter version of a public key.
-    
-    **Step 4:** Now that we have generated the SSH keys, we will find the SSH files when we check.
-    ```bash
-    ls -al ~/.ssh
-    ```
-    
-    **Step 5:** Copy the public key to GitHub
-    - First, we need to copy the public key. Be sure to include the .pub at the end, otherwise you’re looking at the private key.
-    
-        ```bash
-        cat ~/.ssh/id_ed25519.pub
-        ```
-    
-    - Now, going to GitHub.com, click on your profile icon in the top right corner to get the drop-down menu. 
-    - Click “Settings,” then on the settings page, click “SSH and GPG keys,” on the left side “Account settings” menu. 
-    - Click the “New SSH key” button on the right side. 
-    - Now, give the SSH key a title, such as your name and a way to identify the local machine. 
-    - Paste your SSH key into the field, and click the “Add SSH key” to complete the setup.
-    
-    **Step 6:** Now that we’ve set that up, let’s check our authentication again from the command line.
-    
-    ```bash
-    ssh -T git@github.com
-    ```
-    - It should say, `Hi <Your Name>! You've successfully authenticated, but GitHub does not provide shell access.`
-    <br>
-
-    >Detailed Instructions on SSH: [GitHub instructions for SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) | [Software Carpentry](https://swcarpentry.github.io/git-novice/07-github/index.html#3-ssh-background-and-setup)
-
-
+   
+   ```bash
+   ssh -T git@github.com
+   ```
+   
+   - Then type your GitHub password (no characters will show up on the screen while you type your password). If it gives an error, then you're not connected.
+     
+     **Step 2:** Check what key pairs already exist on your computer.
+     
+     ```bash
+     ls -al ~/.ssh
+     ```
+   
+   - If SSH has been set up on the computer you’re using, the public and private key pairs will be listed. The file names are either `id_ed25519`/`id_ed25519.pub` or `id_rsa`/`id_rsa.pub` depending on how the key pairs were set up. 
+     
+     **Step 3:** If they don’t exist on your computer, use this command to create them.
+     
+     ```bash
+     ssh-keygen -t ed25519 -C "your email address"
+     ```
+   
+   - It is recommended to use the same email you use to connect to your GitHub account. Create default file to save SSH keys: hit Enter when prompted.
+   
+   - Add a password if you want, but you will need to remember this password because there might(?) be no way to change it.
+   
+   - The “identification” is actually the private key. You should never share it. The public key is appropriately named. The “key fingerprint” is a shorter version of a public key.
+     
+     **Step 4:** Now that we have generated the SSH keys, we will find the SSH files when we check.
+     
+     ```bash
+     ls -al ~/.ssh
+     ```
+     
+     **Step 5:** Copy the public key to GitHub
+   
+   - First, we need to copy the public key. Be sure to include the .pub at the end, otherwise you’re looking at the private key.
+     
+     ```bash
+     cat ~/.ssh/id_ed25519.pub
+     ```
+   
+   - Now, going to GitHub.com, click on your profile icon in the top right corner to get the drop-down menu. 
+   
+   - Click “Settings,” then on the settings page, click “SSH and GPG keys,” on the left side “Account settings” menu. 
+   
+   - Click the “New SSH key” button on the right side. 
+   
+   - Now, give the SSH key a title, such as your name and a way to identify the local machine. 
+   
+   - Paste your SSH key into the field, and click the “Add SSH key” to complete the setup.
+     
+     **Step 6:** Now that we’ve set that up, let’s check our authentication again from the command line.
+     
+     ```bash
+     ssh -T git@github.com
+     ```
+   
+   - It should say, `Hi <Your Name>! You've successfully authenticated, but GitHub does not provide shell access.`
+     
+     <br>
+     
+     > Detailed Instructions on SSH: [GitHub instructions for SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) | [Software Carpentry](https://swcarpentry.github.io/git-novice/07-github/index.html#3-ssh-background-and-setup)
 
 ## Workflow Example
+
 Here is _one_ example of a workflow you may choose when working with a project. Let's imagine that there's a repository online that you want to use as a starting point for a project. First, you may want **your own cloud copy** of a repository on GitHub. In order to start working on the files, you'll need to get them on your computer (they're still only in the cloud). To do so, you will clone **your repository** to your machine. This will create a local copy of the files **as well as their entire history** on your local machine. We'll use the terminal to clone the repository, but we need to get some information about it first. To get the URL location of the repository, click the **Clone or Download** button, then click on the clipboard icon to copy the URL to your clipboard:
 
 <!--
@@ -147,17 +160,188 @@ Then, on your terminal, you could use the `git clone` command described below.  
 
 Here are additional `git` commands that allow you to interact easily with GitHub:
 
-| Command  | Function |
-| ------------- | ------------- |
-| `git clone REPO-URL` | Creates a new copy of a source repository, which typically exists on a remote server. Use this when you want to clone down a GitHub repository. This command will create a new subdirectory with the same name as the source repository. |
-| `git push origin master`  | Pushes all commits on the `master` branch made since the last push to another repository (`origin`), typically across the network (e.g., to GitHub)  |
-| `git pull`  | Pulls all commits made since the last pull from another repository, and attempts to merge those changes into your current files. |
-| `git config` | Configure your GitHub account. You should run `git config --global user.name "Your Full Name" and `git config --global user.email your-github-email` to initially set up. |
+| Command                  | Function                                                                                                                                                                                                                                 |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `git clone REPO-URL`     | Creates a new copy of a source repository, which typically exists on a remote server. Use this when you want to clone down a GitHub repository. This command will create a new subdirectory with the same name as the source repository. |
+| `git push origin master` | Pushes all commits on the `master` branch made since the last push to another repository (`origin`), typically across the network (e.g., to GitHub)                                                                                      |
+| `git pull`               | Pulls all commits made since the last pull from another repository, and attempts to merge those changes into your current files.                                                                                                         |
+| `git config`             | Configure your GitHub account. You should run `git config --global user.name "Your Full Name" and `git config --global user.email your-github-email` to initially set up.                                                                |
 
-## Additional resources
+## 
 
-How can I learn more about Markdown languages?
+## 🖥️ GIT COMMANDS CHEAT SHEET
 
-- [Here is a great Markdown tutorial](https://commonmark.org/help/tutorial/)
-    
-- [Here is a quick Markdown guide](https://www.markdownguide.org/basic-syntax/)
+**Set configuration values for your username and email** 
+
+```bash
+git config --global user.name YOUR NAME
+git config --global user.email YOUR EMAIL
+```
+
+
+
+**Set default branch to main**
+
+```bash
+git config --global init.default branch main
+```
+
+
+
+**Get help on a command**
+
+
+
+
+```bash
+git help COMMAND
+git COMMAND -h
+```
+
+
+
+**Initialize a new git repository**
+
+```bash
+git init
+```
+
+
+
+**Clone a repository**
+
+```bash
+git clone REPOSITORY URL
+```
+
+**Add a file to the staging area**
+
+```bash
+git add FILE
+```
+
+**Add all file changes to the staging area**
+
+```bash
+git add --all
+git add -A
+git add .
+```
+
+**Check the unstaged changes**
+
+```bash
+git diff
+```
+
+**Commit the staged changes**
+
+```bash
+git commit -m "MESSAGE"
+```
+
+**Reset staging area to the last commit**
+
+```bash
+git reset
+```
+
+**Check the state of the working directory and the staging area**
+
+```bash
+git status
+```
+
+**Remove a file from the index and working directory**
+
+```bash
+git rm FILENAME
+```
+
+**Rename a file**
+
+```bash
+git mv (OLD NAME) (NEW NAME)
+```
+
+**List the commit history**
+
+```bash
+git log
+```
+
+**List all the local branches**
+
+```bash
+git branch
+```
+
+**Create a new branch**
+
+```bash
+git branch BRANCH NAME
+```
+
+**Rename the current branch**
+
+```bash
+git branch -m NEW BRANCH NAME
+```
+
+**Delete a branch**
+
+```bash
+git branch -d BRANCH NAME
+```
+
+**Switch to another branch**
+
+```bash
+git switch BRANCH NAME
+```
+
+**Merge specified branch into the current branch**
+
+```bash
+git merge BRANCH NAME
+```
+
+**Create a connection to a remote repository**
+
+```bash
+git remote add (NAME) (REPOSITORY URL)
+```
+
+**Push the committed changes to a remote directory**
+
+```bash
+git push (REMOTE) (BRANCH)
+```
+
+**Download the content from a remote repository**
+
+```bash
+git pull REMOTE
+```
+
+
+
+## ## 📚 RESOURCES
+
+- Official Git web site: [https://www.git-scm.com/](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbTJXX3lULVZiNG5YVF9oOGNrTlBBN0QzcV9sQXxBQ3Jtc0tteDBwenBtS3hBN3p5VmhuelIwWC1FclFZN3lKMFdGTkJpNGZfQk9sMlRyZTVwSFBtWk1RbXBVZHJDUWJLa21lNU5rRzh0UktTOXdpV2hib1BJSTZlU3Z2X1k5bEdoR3V0MEpQWGJCdWYyTE5OSkJ6aw&q=https%3A%2F%2Fwww.git-scm.com%2F&v=tRZGeaHPoaw)
+
+- Official GitHub.com web site: [https://github.com/](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbU9tc3RQQmZYUlBTZFNmZ2JmaWV4R3V0RmpOQXxBQ3Jtc0trN042aXY3dXBBTVkzbGJSUmQ1RjBVaFlEbVE5UEZpTGdHaWo0TEZZX3NTMjZlc0NXOXhSekJHYlNiSmlpNWhZaDB3X2k3dlJtWm5qcWVkZjVBNEp5d0pQTnFqdER5Tkh4ejlvbUtTRUstc2N6WFZCRQ&q=https%3A%2F%2Fgithub.com%2F&v=tRZGeaHPoaw)
+
+- Git and GitHub.com cheat sheet: [https://education.github.com/git-chea...](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa0M1Nk8xQTBmUmZ5ZnVBR29kZ1BSOXNIUVFFZ3xBQ3Jtc0tuVjV5dUJKRUhadnQtNnBEWXBWU29KQmZ1ZnkwUVRtc0VjelYtTDc0TktVTGJ1eEhxOTFubUJ4TVh0R2VYQzlSQmkyVVRueUo5aTg5eFJOa2pfbU8wSkYxUnAxaGVHQ0k0TVZnNzl5Q1RYeVMwaGRCVQ&q=https%3A%2F%2Feducation.github.com%2Fgit-cheat-sheet-education.pdf&v=tRZGeaHPoaw)
+
+- Git Reference Manual: [http://git-scm.com/docs](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbkVtQzg5SllENlhRby1CY0ZCUkYwOWhNUnYyZ3xBQ3Jtc0tsRWY3Y3ZDMjdSRGdtdHpkQ3BmeEt5Tkk2b252WUsyYlFlUkZzTkY2ZTZEOTRYZVk4RXB5UGZxUjE3ZzZHR2tPbEQ0NDBTalM0UkRlTGJibGcxcjA3T2NsSHU0MjlBUTBnTkJLR2ZoZjRiTkg0YlB3NA&q=http%3A%2F%2Fgit-scm.com%2Fdocs&v=tRZGeaHPoaw)
+
+- Git Overview Book: [http://git-scm.com/book/en/v2](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbElDbWdqbFR4Mm1KR25iLWNqVnRwVXdaSEo5Z3xBQ3Jtc0trQ3RFOWhEcTZlTXFmTkZpSHE2WDBvQmhQWUVmZWc4clpCbDdEMVUxc2ZWclJkVnNtc25hakt4RHdaZXVnTWRNc2NCdjhDdmJhTXlEdVg3MklPOHFxcXNPRndOR3VTZ3dPRktoalBCZ1JXa1RwQ2M5bw&q=http%3A%2F%2Fgit-scm.com%2Fbook%2Fen%2Fv2&v=tRZGeaHPoaw)
+
+- Sample ignore files: [https://github.com/github/gitignore](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa2xFYnVXdXZvb2Z1Zk52Wm1Qem40RnlseUNkZ3xBQ3Jtc0trNFVrNXpIeW04QjVsZVAyWWhQWkZyRHBqaTJmblp3cDlIQXg1NFhsQzdnLVlDSUhmZDBEWWloLTYwNkFGOGZESk83YUlNTGE4ZE4zWXJNVmlFb2oyeHozRTZ6YTdRTE5YZlNlZVppeEtGQ2lPR3c0VQ&q=https%3A%2F%2Fgithub.com%2Fgithub%2Fgitignore&v=tRZGeaHPoaw) 
+
+- How can I learn more about Markdown languages?
+  
+  - [Here is a great Markdown tutorial](https://commonmark.org/help/tutorial/)
+  
+  - [Here is a quick Markdown guide](https://www.markdownguide.org/basic-syntax/)
