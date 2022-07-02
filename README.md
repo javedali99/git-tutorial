@@ -326,7 +326,7 @@ git pull REMOTE
 
 
 
-## ## 📚 RESOURCES
+## 📚 RESOURCES
 
 - Official Git web site: [https://www.git-scm.com/](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbTJXX3lULVZiNG5YVF9oOGNrTlBBN0QzcV9sQXxBQ3Jtc0tteDBwenBtS3hBN3p5VmhuelIwWC1FclFZN3lKMFdGTkJpNGZfQk9sMlRyZTVwSFBtWk1RbXBVZHJDUWJLa21lNU5rRzh0UktTOXdpV2hib1BJSTZlU3Z2X1k5bEdoR3V0MEpQWGJCdWYyTE5OSkJ6aw&q=https%3A%2F%2Fwww.git-scm.com%2F&v=tRZGeaHPoaw)
 
