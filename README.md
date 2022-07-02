@@ -328,17 +328,17 @@ git pull REMOTE
 
 ## 📚 RESOURCES
 
-- Official Git web site: [https://www.git-scm.com/](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbTJXX3lULVZiNG5YVF9oOGNrTlBBN0QzcV9sQXxBQ3Jtc0tteDBwenBtS3hBN3p5VmhuelIwWC1FclFZN3lKMFdGTkJpNGZfQk9sMlRyZTVwSFBtWk1RbXBVZHJDUWJLa21lNU5rRzh0UktTOXdpV2hib1BJSTZlU3Z2X1k5bEdoR3V0MEpQWGJCdWYyTE5OSkJ6aw&q=https%3A%2F%2Fwww.git-scm.com%2F&v=tRZGeaHPoaw)
+- Official Git web site: [https://www.git-scm.com/](https://www.git-scm.com/)
 
-- Official GitHub.com web site: [https://github.com/](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbU9tc3RQQmZYUlBTZFNmZ2JmaWV4R3V0RmpOQXxBQ3Jtc0trN042aXY3dXBBTVkzbGJSUmQ1RjBVaFlEbVE5UEZpTGdHaWo0TEZZX3NTMjZlc0NXOXhSekJHYlNiSmlpNWhZaDB3X2k3dlJtWm5qcWVkZjVBNEp5d0pQTnFqdER5Tkh4ejlvbUtTRUstc2N6WFZCRQ&q=https%3A%2F%2Fgithub.com%2F&v=tRZGeaHPoaw)
+- Official GitHub.com web site: [https://github.com/](https://github.com/)
 
-- Git and GitHub.com cheat sheet: [https://education.github.com/git-chea...](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa0M1Nk8xQTBmUmZ5ZnVBR29kZ1BSOXNIUVFFZ3xBQ3Jtc0tuVjV5dUJKRUhadnQtNnBEWXBWU29KQmZ1ZnkwUVRtc0VjelYtTDc0TktVTGJ1eEhxOTFubUJ4TVh0R2VYQzlSQmkyVVRueUo5aTg5eFJOa2pfbU8wSkYxUnAxaGVHQ0k0TVZnNzl5Q1RYeVMwaGRCVQ&q=https%3A%2F%2Feducation.github.com%2Fgit-cheat-sheet-education.pdf&v=tRZGeaHPoaw)
+- Git and GitHub.com cheat sheet: [https://education.github.com/git-cheat-sheet-education.pdf](https://education.github.com/git-cheat-sheet-education.pdf)
 
-- Git Reference Manual: [http://git-scm.com/docs](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbkVtQzg5SllENlhRby1CY0ZCUkYwOWhNUnYyZ3xBQ3Jtc0tsRWY3Y3ZDMjdSRGdtdHpkQ3BmeEt5Tkk2b252WUsyYlFlUkZzTkY2ZTZEOTRYZVk4RXB5UGZxUjE3ZzZHR2tPbEQ0NDBTalM0UkRlTGJibGcxcjA3T2NsSHU0MjlBUTBnTkJLR2ZoZjRiTkg0YlB3NA&q=http%3A%2F%2Fgit-scm.com%2Fdocs&v=tRZGeaHPoaw)
+- Git Reference Manual: [http://git-scm.com/docs](http://git-scm.com/docs)
 
-- Git Overview Book: [http://git-scm.com/book/en/v2](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbElDbWdqbFR4Mm1KR25iLWNqVnRwVXdaSEo5Z3xBQ3Jtc0trQ3RFOWhEcTZlTXFmTkZpSHE2WDBvQmhQWUVmZWc4clpCbDdEMVUxc2ZWclJkVnNtc25hakt4RHdaZXVnTWRNc2NCdjhDdmJhTXlEdVg3MklPOHFxcXNPRndOR3VTZ3dPRktoalBCZ1JXa1RwQ2M5bw&q=http%3A%2F%2Fgit-scm.com%2Fbook%2Fen%2Fv2&v=tRZGeaHPoaw)
+- Git Overview Book: [http://git-scm.com/book/en/v2](http://git-scm.com/book/en/v2)
 
-- Sample ignore files: [https://github.com/github/gitignore](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa2xFYnVXdXZvb2Z1Zk52Wm1Qem40RnlseUNkZ3xBQ3Jtc0trNFVrNXpIeW04QjVsZVAyWWhQWkZyRHBqaTJmblp3cDlIQXg1NFhsQzdnLVlDSUhmZDBEWWloLTYwNkFGOGZESk83YUlNTGE4ZE4zWXJNVmlFb2oyeHozRTZ6YTdRTE5YZlNlZVppeEtGQ2lPR3c0VQ&q=https%3A%2F%2Fgithub.com%2Fgithub%2Fgitignore&v=tRZGeaHPoaw) 
+- Sample ignore files: [https://github.com/github/gitignore](https://github.com/github/gitignore) 
 
 - How can I learn more about Markdown languages?
   
