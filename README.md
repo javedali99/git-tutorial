@@ -167,7 +167,7 @@ Here are additional `git` commands that allow you to interact easily with GitHub
 | `git pull`               | Pulls all commits made since the last pull from another repository, and attempts to merge those changes into your current files.                                                                                                         |
 | `git config`             | Configure your GitHub account. You should run `git config --global user.name "Your Full Name" and `git config --global user.email your-github-email` to initially set up.                                                                |
 
-## 
+
 
 ## 🖥️ GIT COMMANDS CHEAT SHEET
 
