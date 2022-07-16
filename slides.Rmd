@@ -188,7 +188,7 @@ background-size: contain
 .h4[Windows]
 
 
-Intall `Git Bash` from https://gitforwindows.org/.
+https://tinyurl.com/git-win
 
 <br>
 
