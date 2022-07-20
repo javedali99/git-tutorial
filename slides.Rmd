@@ -171,16 +171,24 @@ Git is extremely powerful and there are myriad sophisticated things you can do w
 You can interact with Git using the **Graphical User Interface (GUI)** provided by GitHub Desktop, or through the **Command Line Interface (CLI)**. 
 
 
-.h4[In this tutorial, we will use the CLI.]
+.h4[In this tutorial, we will use both.]
 
 
 ---
 background-image: url(assets/remote-local.png)
 background-size: contain
 
+---
+# Installation (GUI)
+
+Install GitHub Desktop from <https://desktop.github.com/>.
+
+<div style="width: 100%;">
+  <img src="https://repository-images.githubusercontent.com/58559694/aeae5400-6102-11e9-980d-dc74185ed41d" width="100%">
+</div>
 
 ---
-# Download and Installation
+# Installation (CLI)
 
 .pull-left[
 <br>
@@ -208,6 +216,9 @@ https://tinyurl.com/git-mac
     <img src="https://gitforwindows.org/img/git_logo.png" class="img-top" alt="Card Front">
 </div>
 ]
+
+
+
 
 ---
 # Setting up git environment 
@@ -286,33 +297,21 @@ It should say,
 ```{bash eval=FALSE}
 Hi <Your Name>! You have successfully authenticated, but GitHub does not provide shell access.
 ```
----
-
-# Working with GitHub
-
-<br>
-
-There are two ways to work with GitHub projects.
 
 
-**Type 1:** 
 
-- Create the repository, clone it to your PC, and work on it. **(Recommended)**
 
-<br>
 
-**Type 2:** 
 
-- Work on your project locally then create the repository on GitHub and push it to remote.
+
+
+
 
 ---
-# Create a repo on GitHub
+class: inverse, middle, center
 
-<div>
-  <video width="100%" height="90%" controls muted>
-  <source src="assets/create-repo.mp4" type="video/mp4">
-  </video>
-</div>
+# Using GitHub Desktop
+
 
 ---
 # The basic workflow 
@@ -330,6 +329,101 @@ There are two ways to work with GitHub projects.
 1. **Pull** any changes from the remote repository that your collaborators might have made
 
 2. Repeat steps 2-4 above
+
+
+---
+
+# Working with GitHub
+
+<br>
+
+There are two ways to work with GitHub projects.
+
+
+**Type 1:** 
+
+- Create the repository on GitHub, clone it to your PC, and work on it. **(Recommended)**
+
+<br>
+
+**Type 2:** 
+
+- Work on your project locally then create the repository on GitHub and push it to remote.
+
+---
+# Create a repo on GitHub
+
+<div>
+  <video width="100%" height="90%" controls muted>
+  <source src="assets/create-repo.mp4" type="video/mp4">
+  </video>
+</div>
+
+
+
+---
+# Cloning
+
+<div>
+  <video width="100%" height="90%" controls muted>
+  <source src="assets/cloning_desktop.mp4" type="video/mp4">
+  </video>
+</div>
+
+
+---
+# Work on local repo
+
+<div>
+  <video width="90%" height="80%" controls muted>
+  <source src="assets/add_files_desktop.mp4" type="video/mp4">
+  </video>
+</div>
+
+
+---
+# Commit your changes 
+
+<div>
+  <video width="90%" height="80%" controls muted>
+  <source src="assets/committing_desktop.mp4" type="video/mp4">
+  </video>
+</div>
+
+
+
+---
+# Commit your changes
+
+.h4[Use an informative commit message]
+  - (Not great) "Analyze data" `r emo::ji("disappointed")`
+  - (Better) "Estimate logistic regression" `r emo::ji("tada")`
+
+.h4[Have a consistent style]
+  - Start with an action verb
+  - Capitalize message
+
+.h4[Commits are _cheap_, use them often!]
+
+
+---
+# Push your changes
+
+<div>
+  <video width="90%" height="80%" controls muted>
+  <source src="assets/pushing_desktop.mp4" type="video/mp4">
+  </video>
+</div>
+
+
+
+---
+class: inverse, middle, center
+
+# Using the command line (CLI)
+
+
+
 
 ---
 
