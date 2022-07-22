@@ -152,6 +152,15 @@ Git is extremely powerful and there are myriad sophisticated things you can do w
 
 
 ---
+## Revert back to the last working stage
+
+<div>
+  <video width="100%" height="100%" controls muted>
+  <source src="assets/git-changes.mp4" type="video/mp4">
+  </video>
+</div>
+
+---
 # Git and GitHub
 
 .h4[Git]
