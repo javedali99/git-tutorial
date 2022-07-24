@@ -202,10 +202,10 @@ Install GitHub Desktop from <https://desktop.github.com/>.
 .pull-left[
 <br>
 
-.h4[Windows]
+.h4[Git for Windows]
 
-
-https://tinyurl.com/git-win
+https://gitforwindows.org/
+<!-- https://tinyurl.com/git-win -->
 
 <br>
 
