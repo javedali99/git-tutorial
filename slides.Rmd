@@ -390,6 +390,7 @@ There are two ways to work with GitHub projects.
 </div>
 
 
+
 ---
 # Commit your changes 
 
@@ -413,6 +414,16 @@ There are two ways to work with GitHub projects.
   - Capitalize message
 
 .h4[Commits are _cheap_, use them often!]
+
+
+---
+# Tracking files
+
+<div>
+  <video width="100%" height="90%" controls muted>
+  <source src="assets/staging_git.mp4" type="video/mp4">
+  </video>
+</div>
 
 
 ---
