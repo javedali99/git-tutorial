@@ -673,13 +673,16 @@ class: inverse, middle, center
 
 
 ---
+class: middle, center
 # Other Git resources
 
-### http://swcarpentry.github.io/git-novice/
-### https://github.github.com/training-kit/downloads/github-git-cheat-sheet/
-### https://learngitbranching.js.org/
-<!-- ### https://happygitwithr.com/ -->
-<!-- ### https://ndpsoftware.com/git-cheatsheet.html -->
+#### [Version Control with Git](http://swcarpentry.github.io/git-novice/)
+#### [GitHub Git Cheatsheet](https://github.github.com/training-kit/downloads/github-git-cheat-sheet/)
+#### [Learn Git Branching in Visual and Interactive Way](https://learngitbranching.js.org/)
+#### [Pro Git book](https://git-scm.com/book/en/v2)
+#### [Happy Git and GitHub for the useR](https://happygitwithr.com/)
+#### [Git Cheatsheet](https://ndpsoftware.com/git-cheatsheet.html)
+#### [W3School Git Tutorial](https://www.w3schools.com/git/)
 
 
 
@@ -720,13 +723,13 @@ class: pink, middle, center
  library(metathis)
  meta() %>%
    meta_description(
-     "Use YAML, strings, and glue to power your R Markdown documents."
+     ""
    ) %>%
-   meta_name("github-repo" = "javedali99/talks") %>%
+   meta_name("github-repo" = "javedali99/git-tutorial") %>%
    meta_viewport() %>%
    meta_social(
-     title = "Made with YAML, strings, and glue: An R Markdown valentine for you",
-     url = "https://alison.netlify.app/rmd-valentine",
+     title = "",
+     url = "https://javedali.net/",
      image = "https://www.javedali.net/author/avatar_hufffe226e957f1b2290d587dc7c95d8a4_871284_270x270_fill_lanczos_center_2.PNG",
      image_alt = "Vintage valentine",
      og_type = "website",
