@@ -500,31 +500,6 @@ git push
 knitr::include_graphics("imgs/github-workflow.png")
 ```
 
----
-# Commit messages
-
-.pull-left[
-<br>
-In git, “Commits are cheap.” Do them often.
-
-When you commit, you must provide a one-line message stating what you have done.
-
-- **Terrible message:** “Fixed a bunch of things”
-
-- **Better message:** “Corrected the calculation of median scores”
-
-Commit messages can be very helpful, to yourself as well as to your team members.
-
-You can’t say much in one line, so commit often.
-
-
-]
-
-<br>
-
-.pull-right[
-![vcs](imgs/vcs.png)
-]
 
 
 
