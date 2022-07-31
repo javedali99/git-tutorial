@@ -73,7 +73,7 @@ background-color: #557571
 
 ### Introduction to Git and GitHub
 
-<br><br><br><br><br>
+<br><br><br><br><br><br>
 .h4[Javed Ali]
 
 <!-- .h4[<a href="https://github.com/javedali99/git-tutorial"><i class="fa fa-github fa-fw"></i>&nbsp; https://github.com/javedali99/git-tutorial</a>] -->
@@ -87,16 +87,22 @@ Dept. of Civil, Environmental & Construction Engineering
 <!-- [`r fontawesome::fa("link")` javedali.net](https://javedali.net) -->
 University of Central Florida, USA
 
-<br><br><br>
+<br><br>
 .h5[(`r format(Sys.Date(), format='%d %B %Y')`)]
 
-<br><br>
-<br><br>
-<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 .pull-right[
+<br><br><br>
 .footnote[Slides:
 <a href="https://tinyurl.com/intro-git-slides"><i class="fa fa-github fa-fw"></i>&nbsp; https://tinyurl.com/intro-git-slides</a>
+<!-- (adapted from Alice Lépissier's slides) -->
 ]
 ]
 
@@ -155,10 +161,26 @@ Git is extremely powerful and there are myriad sophisticated things you can do w
 ## Revert back to the last working stage
 
 <div>
-  <video width="100%" height="100%" controls muted>
+  <video width="100%" height="100%" autoplay loop controls muted playsinline>
   <source src="assets/git-changes.mp4" type="video/mp4">
   </video>
 </div>
+
+---
+# Why GitHub?
+
+
+```{r echo=FALSE, fig.align="center",  out.width="100%", fig.cap=""}
+knitr::include_graphics("imgs/why-github.png")
+```
+
+<br>
+<br>
+
+.pull-right[
+.footnote[(Artwork by Allison Horst)]
+]
+
 
 ---
 # Git and GitHub
@@ -186,6 +208,17 @@ You can interact with Git using the **Graphical User Interface (GUI)** provided 
 ---
 background-image: url(assets/remote-local.png)
 background-size: contain
+
+
+
+---
+## GitHub Walkthrough
+
+<div>
+  <video width="100%" height="100%" autoplay loop muted control>
+  <source src="assets/github-vid.mp4" type="video/mp4">
+  </video>
+</div>
 
 ---
 # Installation (GUI)
