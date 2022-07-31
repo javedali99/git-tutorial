@@ -63,7 +63,7 @@ background-color: #557571
 
 
 <div>
-<img class="square" style="position: absolute; top: 240px;right: 50px;" src="assets/github.png" width="250px">
+<img class="square" style="position: absolute; top: 190px;right: 50px;" src="imgs/gh-octacat.png" width="350px">
 </div>
 
 # Hands-on GitHub Tutorial
@@ -318,11 +318,6 @@ It should say,
 ```{bash eval=FALSE}
 Hi <Your Name>! You have successfully authenticated, but GitHub does not provide shell access.
 ```
-
-
-
-
-
 
 
 
