@@ -61,9 +61,6 @@ style_extra_css(css = extra_css, outfile = "custom.css")
 class: title-slide-custom, title-slide, middle
 background-color: #557571
 
-<!-- <div> -->
-<!-- <img class="circle" style="position: absolute; top: 50px;right: 50px;" src="https://octodex.github.com/images/nyantocat.gif" width="150px"> -->
-<!-- </div> -->
 
 <div>
 <img class="square" style="position: absolute; top: 240px;right: 50px;" src="assets/github.png" width="250px">
@@ -76,15 +73,11 @@ background-color: #557571
 <br><br><br><br><br><br>
 .h4[Javed Ali]
 
-<!-- .h4[<a href="https://github.com/javedali99/git-tutorial"><i class="fa fa-github fa-fw"></i>&nbsp; https://github.com/javedali99/git-tutorial</a>] -->
 
-<!-- [`r fontawesome::fa("github")` @javedali99](https://github.com/javedali99) -->
 Graduate Research Assistant & PhD Student
 
-<!-- [`r fontawesome::fa("twitter")` @javedali99](https://twitter.com/javedali99) -->
 Dept. of Civil, Environmental & Construction Engineering
 
-<!-- [`r fontawesome::fa("link")` javedali.net](https://javedali.net) -->
 University of Central Florida, USA
 
 <br><br>
