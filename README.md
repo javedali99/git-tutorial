@@ -7,6 +7,8 @@
     <br>
 </h2>
 
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://jarednielsen.com/learn-git-fork-pull-request/)
+
 This tutorial provides an introduction to version control systems using `git` and `GitHub`. It focuses on teaching you the techniques you need to actually get started.
 
 We will use the ⌨️ Command Line Interface (CLI) (i.e. `Bash` for Windows and `Terminal` in Mac) and GitHub Desktop to perform essential command line techniques. 
