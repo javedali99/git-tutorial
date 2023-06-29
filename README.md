@@ -11,7 +11,8 @@
 
 This tutorial provides an introduction to version control systems using `git` and `GitHub`. It focuses on teaching you the techniques you need to actually get started.
 
-We will use the ⌨️ Command Line Interface (CLI) (i.e. `Bash` for Windows and `Terminal` in Mac) and GitHub Desktop to perform essential command line techniques. 
+We will use the ⌨️ Command Line Interface (CLI) (i.e. `Bash` for Windows and `Terminal` in Mac) to perform essential command line techniques. In case you want to learn how to use `git` with [GitHub Desktop](https://desktop.github.com/), please refer to the slides available [here](https://javedali99.github.io/git-tutorial/slides.html).
+
 
 ## Git
 
