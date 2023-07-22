@@ -9,147 +9,92 @@
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://jarednielsen.com/learn-git-fork-pull-request/)
 
-This tutorial provides an introduction to version control systems using `git` and `GitHub`. It focuses on teaching you the techniques you need to actually get started.
+This tutorial aims to provide an in-depth introduction to version control systems using `git` and `GitHub`. It is designed to equip you with the necessary skills to effectively use these tools, regardless of your experience level.
 
-We will use the ⌨️ Command Line Interface (CLI) (i.e. `Bash` for Windows and `Terminal` in Mac) to perform essential command line techniques. In case you want to learn how to use `git` with [GitHub Desktop](https://desktop.github.com/), please refer to the slides available [here](https://javedali99.github.io/git-tutorial/slides.html).
+We will use the ⌨️ Command Line Interface (CLI) (i.e. `Bash` for Windows and `Terminal` in MacOS) to perform essential command line techniques. In case you want to learn how to use `git` with [GitHub Desktop](https://desktop.github.com/), please refer to the slides available [here](https://javedali99.github.io/git-tutorial/slides.html).
 
 
-## Git
+## Git: An Overview
 
-`Git` is a free and open-source version control software that provides you with a set of command line tools for tracking changes to your files. 
+`Git` is a free and open-source version control software that was created by Linus Torvalds, the creator of Linux. It helps software developers track changes made to their code over time, making it easier to collaborate with others and revert changes when necessary.
 
-All of the files in a project directory (referred to as a `repository`, or `repo`) are tracked by a hidden `.git` file in the root of the project.  You can initiate a repository on your local machine with the `git init` command.  
+All files in a project directory, or a `repository` (repo for short), are tracked by a hidden `.git` file located in the root directory. You can create a new repository on your local machine by navigating to the directory where you want your project to live and typing the `git init` command. 
 
-Git allows you to roll back to a previous snapshot of your project called a `commit`.  When you want to take a snapshot of your work, you'll need to `add` your the changes to your files to a **staging area**.  You can think of a staging area (literally) like a staging area.  The changes that you want to be included in your next snapshot need to be put on stage in order to be captured by the `commit`.  Each time you take a snapshot (`commit`), you'll need to include a short message that describes the set of changes.  These steps fit together as follows:
+Git allows you to roll back to a previous snapshot of your project called a `commit`.  When you want to take a snapshot of your work, you'll need to `add` the changes to your files to a **staging area**.  You can think of a staging area (literally) like a staging area.  The changes that you want to be included in your next snapshot need to be put on stage in order to be captured by the `commit`.
+
+Each commit requires a message to describe what has changed. These commit messages should be brief but descriptive, allowing you (or others) to understand what has changed without having to read the code. 
+
+Here is a visual representation of the process:
 
 ![local git process](imgs/local-git-process.png)
 
 <br>
 
-Here is additional information on each (of these) `git` commands (note, this **_is not_** a full list -- see [documentation](https://git-scm.com/docs)):
+Let's delve into some common `git` commands. This is not a complete list — for a more comprehensive look at the `git` commands, check the [official Git documentation](https://git-scm.com/docs):
 
-| Command                            | Function                                                                                                                                                                     |
-| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `git init`                         | Initialize a new repository in the current directory. This creates a database to track file changes, which you **only do once** at the start of a project.                   |
-| `git status`                       | Reports any changes to the files in your repo.                                                                                                                               |
-| `git add FILE-NAME` or `git add .` | Adds a file or files (`.`) to the staging area. All changes to those files will be included in the next commit.                                                              |
-| `git commit -m "Description"`      | Commits all changes to all files currently in the **staging area** to the repository. This takes a snapshot that you can return to and **must include a message** with `-m`. |
 
-So far, the process described all occurs on your local machine. This is a good practice, but does not facilitate collaboration with others, or create a backup of your code. For these purposes, we'll use **GitHub**.
+| Command                            | Description                                                                                                                                                                    |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `git init`                         | Initializes a new Git repository in the current directory. This creates a hidden `.git` directory which is used to track changes. This command is typically only used once at the start of a project. |
+| `git status`                       | Provides information about any untracked files, changes not yet staged for commit, and changes that are staged but not yet committed. This command helps you understand the state of your project at any given time. |
+| `git add FILE-NAME` or `git add .` | The `git add` command adds a file or all files (`.`) to the staging area. This signals to Git that these changes should be included in the next commit. |
+| `git commit -m "Description"`      | This command takes a snapshot of all changes in the staging area and saves them as a new commit in the repository. The `-m` flag is followed by a message that should briefly describe the changes made in this commit. |
 
-## GitHub
+The process described above happens on your local machine. This is perfect for solo projects, but if you want to collaborate with others or create a backup of your code, you'll need to use **GitHub**.
 
-In order to share our code and collaborate with others, we'll need a publicly accessible (cloud) location where we can store our files (and file _history_) -- that's what GitHub is for.
+## GitHub: An Overview
 
-GitHub is the most popular open-source web-based repository hosting service.  In addition to providing a great UI on top of a server that hosts your repositories, GitHub has a number of additional features such as issue tracking, wiki pages, and notifications that make it a great collaboration tool.  
+GitHub is a platform that allows developers to host and share their Git repositories online. It's a fantastic tool for collaboration, allowing multiple developers to work on the same project simultaneously without overwriting each other's changes. It's also a great way to backup your code — should your local machine ever fail, you can simply clone your repository from GitHub and continue where you left off. In addition to providing a great UI on top of a server that hosts your repositories, GitHub has a number of additional features such as issue tracking, wiki pages, and notifications that make it a great collaboration tool.  
 
-The important thing to keep in mind is that GitHub doesn't just store the a copy of your code files in your repository -- it stores the **entire database of changes** to the files. This allows other developers to view the files at an earlier point in time.  
+GitHub repositories are just like Git repositories, but with some added features. For example, GitHub allows for `pull requests`, where one developer can propose changes to a project that another developer can review and approve. GitHub also includes tools for project management, such as issue tracking and project boards.
 
-## To Get Started
+One key thing to remember is that GitHub doesn't just store a copy of your code files — it stores the **entire history** of changes to the files, thanks to Git. This allows other developers to view the files at an earlier point in time, or even revert the entire project back to an earlier state.
 
-1. Register for an account on [github.com](https://github.com/).
 
-2. Download, install and configure git. 
-   
-   - Windows users please install [Git for Windows](https://gitforwindows.org/).
-   
-   - Mac users: [Git for MacOS](https://git-scm.com/download/mac) or install it using Homebrew: 
-     
-     ```bash
-     brew install git
-     ```
 
-4. Make sure to set Git with your name and email address using the following commands on the command-line with your name and email address:
-   
-   ```bash
-   # Enter YOUR NAME to set your name
-   git config --global user.name "FirstName LastName"
-   
-   # Enter YOUR EMAIL to set your email. Make sure it is the email associated with your GitHub account!
-   git config --global user.email "email@example.com"
-   ```
-   
-   - Test if this worked by typing 
-     
-     ```bash
-     git config --list
-     ```
-   
-   - This is important because Git will use this information when you work on a project.
+## To Get Started with Git and GitHub
+
+Here's a step-by-step guide to get you started with Git and GitHub:
+
+1. **Create a GitHub Account**: Visit [github.com](https://github.com/) and register for an account.
+
+2. **Install Git**: Depending on your operating system, download and install Git using one of the following methods:
+    - Windows users: Download and install [Git for Windows](https://gitforwindows.org/).
+    - Mac users: Download and install [Git for MacOS](https://git-scm.com/download/mac) or use Homebrew by typing `brew install git` in the Terminal.
+
+3. **Configure Git**: Once Git is installed, you'll need to configure it with your name and email address. This information is used to track who made each commit in a project. Open your Terminal or Command Prompt and type the following commands, replacing "FirstName LastName" and "email@example.com" with your name and email:
+
+    ```bash
+    # Enter YOUR NAME to set your name
+    git config --global user.name "FirstName LastName"
+
+    # Enter YOUR EMAIL to set your email. Make sure it is the email associated with your GitHub account!
+    git config --global user.email "email@example.com"
+    ```
+    You can verify that the configuration worked by typing `git config --list`. The output should include your name and email. Ensure you use the email associated with your GitHub account. This is important because Git will use this information when you work on a project.
+
 
 > See [this article](https://help.github.com/articles/set-up-git/) for more information on setting up GitHub.
 
-5. **SSH Key generation and setup**
-   
-    You will need to configure local machine to connect to GitHub using SSH authorization. You will only need to do this once for each local machine (unless GitHub changes things in the future and decides this isn’t secure enough). SSH is a cryptographic network protocol that allows secure communication between computers using an otherwise insecure network. SSH uses what is called a key pair. This is two keys that work together to validate access. One key is publicly known and called the public key, and the other key called the private key is kept private. 
-   
-    **Step 1:** Check if your computer is already connected to GitHub
-   
-   ```bash
-   ssh -T git@github.com
-   ```
-   
-   - Then type your GitHub password (no characters will show up on the screen while you type your password). If it gives an error, then you're not connected.
-     
-     **Step 2:** Check what key pairs already exist on your computer.
-     
-     ```bash
-     ls -al ~/.ssh
-     ```
-   
-   - If SSH has been set up on the computer you’re using, the public and private key pairs will be listed. The file names are either `id_ed25519`/`id_ed25519.pub` or `id_rsa`/`id_rsa.pub` depending on how the key pairs were set up. 
-     
-     **Step 3:** If they don’t exist on your computer, use this command to create them.
-     
-     ```bash
-     ssh-keygen -t ed25519 -C "your email address"
-     ```
-   
-   - It is recommended to use the same email you use to connect to your GitHub account. Create default file to save SSH keys: hit Enter when prompted.
-   
-   - Add a password if you want, but you will need to remember this password because there might(?) be no way to change it.
-   
-   - The “identification” is actually the private key. You should never share it. The public key is appropriately named. The “key fingerprint” is a shorter version of a public key.
-     
-     **Step 4:** Now that we have generated the SSH keys, we will find the SSH files when we check.
-     
-     ```bash
-     ls -al ~/.ssh
-     ```
-     
-     **Step 5:** Copy the public key to GitHub
-   
-   - First, we need to copy the public key. Be sure to include the .pub at the end, otherwise you’re looking at the private key.
-     
-     ```bash
-     cat ~/.ssh/id_ed25519.pub
-     ```
-   
-   - Now, going to GitHub.com, click on your profile icon in the top right corner to get the drop-down menu. 
-   
-   - Click “Settings,” then on the settings page, click “SSH and GPG keys,” on the left side “Account settings” menu. 
-   
-   - Click the “New SSH key” button on the right side. 
-   
-   - Now, give the SSH key a title, such as your name and a way to identify the local machine. 
-   
-   - Paste your SSH key into the field, and click the “Add SSH key” to complete the setup.
-     
-     **Step 6:** Now that we’ve set that up, let’s check our authentication again from the command line.
-     
-     ```bash
-     ssh -T git@github.com
-     ```
-   
-   - It should say, `Hi <Your Name>! You've successfully authenticated, but GitHub does not provide shell access.`
-     
-     <br>
-     
-     > Detailed Instructions on SSH: [GitHub instructions for SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) | [Software Carpentry](https://swcarpentry.github.io/git-novice/07-github/index.html#3-ssh-background-and-setup)
+4. **Set up SSH Keys**: SSH (Secure Shell) keys are a way to identify yourself to GitHub without needing to provide your username and password every time. They are a pair of encryption keys that work together to secure your connection. The public key is stored on GitHub and the private key is stored on your local machine. 
+
+    Here are the steps to generate a new SSH key and add it to your GitHub account:
+
+- **Check for existing SSH keys:** Open your Terminal or Command Prompt and type `ls -al ~/.ssh`. If you see files named `id_rsa.pub` or `id_ed25519.pub`, you already have an SSH key. If not, you'll need to create one.
+    
+- **Generate a new SSH key:** In your Terminal or Command Prompt, type `ssh-keygen -t ed25519 -C "your email address"`, replacing "your email address" with the email you used to sign up for GitHub. Press `Enter` to accept the default file location. When asked to enter a passphrase, either type a secure passphrase or press `Enter` to proceed without a passphrase.
+    
+- **Add your SSH key to the ssh-agent:** First, start the ssh-agent in the background by typing `eval "$(ssh-agent -s)"`. Then, add your SSH private key to the ssh-agent by typing `ssh-add ~/.ssh/id_ed25519` (or `ssh-add ~/.ssh/id_rsa` if you're using an RSA key).
+    
+- **Add your SSH key to your GitHub account:** Type `cat ~/.ssh/id_ed25519.pub` (or `cat ~/.ssh/id_rsa.pub` for RSA keys) and press `Enter` to display your public key. Select and copy the key. Then, go to the GitHub website, click your profile photo, select **Settings**, then **SSH and GPG keys**, then **New SSH key**. Paste your key into the "Key" field and click **Add SSH key**.
+    
+- **Test your SSH connection:** Go back to your Terminal or Command Prompt and type `ssh -T git@github.com`. If you see a message saying `"You've successfully authenticated, but GitHub does not provide shell access"`, then everything is working!
+
+> For more information on SSH keys, check out the [GitHub guide for SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) or the [Software Carpentry guide](https://swcarpentry.github.io/git-novice/07-github/index.html#3-ssh-background-and-setup).
 
 ## Workflow Example
 
-Here is _one_ example of a workflow you may choose when working with a project. Let's imagine that there's a repository online that you want to use as a starting point for a project. First, you may want **your own cloud copy** of a repository on GitHub. In order to start working on the files, you'll need to get them on your computer (they're still only in the cloud). To do so, you will clone **your repository** to your machine. This will create a local copy of the files **as well as their entire history** on your local machine. We'll use the terminal to clone the repository, but we need to get some information about it first. To get the URL location of the repository, click the **Clone or Download** button, then click on the clipboard icon to copy the URL to your clipboard:
+Here is _one_ example of a workflow you may choose when working on a project. Let's imagine that there's a repository online that you want to use as a starting point for a project. First, you may want **your own cloud copy** of a repository on GitHub. In order to start working on the files, you'll need to get them on your computer (they're still only in the cloud). To do so, you will clone **your repository** to your machine. This will create a local copy of the files **as well as their entire history** on your local machine. We'll use the terminal to clone the repository, but we need to get some information about it first. To get the URL location of the repository, click the **Clone or Download** button, then click on the clipboard icon to copy the URL to your clipboard:
 
 <!--
 ![clone button on GitHub](imgs/clone.png)
@@ -161,18 +106,34 @@ Then, on your terminal, you could use the `git clone` command described below.  
 
 <br>
 
-Here are additional `git` commands that allow you to interact easily with GitHub:
 
-| Command                  | Function                                                                                                                                                                                                                                 |
+## Collaborating with Git and GitHub
+
+Now that we've covered the basics of Git and GitHub, let's take a look at how they can be used for collaboration.
+
+Let's imagine you find a repository on GitHub that you'd like to contribute to. The first step is to create your own copy of the repository on GitHub, known as a **fork**. This gives you a version of the project that you have full control over, allowing you to make changes without affecting the original project.
+
+Once you have forked the repository, you'll want to **clone** it to your local machine. This creates a copy of the project files on your computer, allowing you to work on the project even when you're offline. To clone a repository, navigate to the main page of the repository on GitHub, click the "Clone or download" button, and copy the URL that appears. Then, open your Terminal or Command Prompt, navigate to the directory where you want the project to live, and type `git clone`, followed by the URL you copied.
+
+Now that you have a local copy of the project, you can start making changes. Remember to commit your changes frequently with clear, descriptive commit messages. This will make it easier for others to understand what you've done.
+
+When you're ready to share your changes with others, you'll need to **push** your commits to GitHub. This uploads your changes to the GitHub repository, making them available to others. To push your changes, open your Terminal or Command Prompt, navigate to your project directory, and type `git push origin main`, replacing "master" with the name of the branch you want to push.
+
+Finally, to propose that your changes be merged into the original project, you can create a **pull request**. To do this, navigate to the main page of the original repository on GitHub, click the "Pull requests" tab, then click the "New pull request" button. Select your fork on the right-hand side, review the changes, then click the "Create pull request" button. The project owner will be able to review your changes and decide whether to merge them into the project.
+
+Here are some additional `git` commands that allow you to interact easily with GitHub:
+
+| Command                  | Description                                                                                                                                                                                                                              |
 | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `git clone REPO-URL`     | Creates a new copy of a source repository, which typically exists on a remote server. Use this when you want to clone down a GitHub repository. This command will create a new subdirectory with the same name as the source repository. |
-| `git push origin master` | Pushes all commits on the `master` branch made since the last push to another repository (`origin`), typically across the network (e.g., to GitHub)                                                                                      |
-| `git pull`               | Pulls all commits made since the last pull from another repository, and attempts to merge those changes into your current files.                                                                                                         |
-| `git config`             | Configure your GitHub account. You should run `git config --global user.name "Your Full Name" and `git config --global user.email your-github-email` to initially set up.                                                                |
+| `git clone REPO-URL`     | Creates a new copy of a source repository, usually hosted on a remote server. Use this when you want to clone a GitHub repository. This command creates a new subdirectory named after the source repository.                           |
+| `git push origin main` | Pushes all commits on the `main` branch made since the last push to another repository (`origin`), typically across the network (e.g., to GitHub).                                                                                     |
+| `git pull`               | Pulls all commits made since the last pull from another repository, and attempts to merge those changes into your current files. This is useful when collaborating with others, as it allows you to incorporate their changes into your project. |
+| `git config`             | Configure your GitHub account. You should run `git config --global user.name "Your Full Name"` and `git config --global user.email your-github-email` to initially set up.                                                                |
 
 
 
-## 🖥️ GIT COMMANDS CHEAT SHEET
+
+## 🖥️ Git Commands Cheat Sheet
 
 **Set configuration values for your username and email** 
 
