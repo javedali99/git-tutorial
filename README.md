@@ -3,7 +3,9 @@
 <h1 align="center">Hands-on Tutorial: Introduction to Git and GitHub </h1>
 
 <h2 align="center">
-    <a href="https://javedali99.github.io/git-tutorial/slides.html">🖥️ Slides</a>
+    <a href="https://javedali99.github.io/git-tutorial/slides.html">🖥️ Slides </a>
+    <a> | </a>
+    <a href="https://www.javedali.net/post/intro-git-github/">🌐 Blogpost</a>
     <br>
 </h2>
 
