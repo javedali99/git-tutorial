@@ -2,12 +2,16 @@
 
 <h1 align="center">Hands-on Tutorial: Introduction to Git and GitHub </h1>
 
-<h2 align="center">
+<h3 align="center">
     <a href="https://javedali99.github.io/git-tutorial/slides.html">🖥️ Slides </a>
     <a> | </a>
     <a href="https://www.javedali.net/post/intro-git-github/">🌐 Blogpost</a>
+    <a> | </a>
+    <a href="https://www.javedali.net/post/23-advance-git-commands-shortcuts/">🌐 23 Advanced Git Techniques</a>
     <br>
-</h2>
+</h3>
+
+---
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://jarednielsen.com/learn-git-fork-pull-request/)
 
